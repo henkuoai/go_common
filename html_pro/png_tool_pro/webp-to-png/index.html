@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WebP to PNG Converter — Free, Private, No Upload</title>
+<meta name="description" content="Convert WebP images to PNG in your browser. Keeps transparency, no upload, no signup. Also exports JPG or a smaller WebP when PNG is too heavy. Batch convert and ZIP download.">
+<link rel="canonical" href="https://example.com/webp-to-png/">
+  <link rel="alternate" hreflang="en" href="https://example.com/webp-to-png/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://example.com/zh/webp-to-png/">
+  <link rel="alternate" hreflang="ja" href="https://example.com/ja/webp-to-png/">
+  <link rel="alternate" hreflang="ko" href="https://example.com/ko/webp-to-png/">
+  <link rel="alternate" hreflang="x-default" href="https://example.com/webp-to-png/">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232563eb'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='17' font-weight='700' fill='white' text-anchor='middle'%3EPN%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="WebP to PNG Converter — Free, Private, No Upload">
+<meta property="og:description" content="Convert WebP to PNG in your browser. Transparency preserved. Files never leave your device.">
+<meta property="og:url" content="https://example.com/webp-to-png/">
+
+<link rel="stylesheet" href="../assets/tool.css">
+</head>
+<body id="top">
+
+<nav class="sitenav">
+  <div class="wrap">
+    <a class="brand" href="../"><span class="mark">/</span>LocalConvert</a>
+    <ul>
+      <li><a href="../heic-to-jpg/">HEIC → JPG</a></li>
+      <li><a href="../webp-to-png/" aria-current="page">WebP → PNG</a></li>
+      <li><a href="../avif-to-jpg/">AVIF → JPG</a></li>
+    </ul>
+    <div class="langsw" aria-label="Language" role="group">
+      <a href="../webp-to-png/" hreflang="en" lang="en" aria-current="page" title="English">EN</a>
+      <a href="../zh/webp-to-png/" hreflang="zh-Hans" lang="zh-Hans" title="简体中文">中文</a>
+      <a href="../ja/webp-to-png/" hreflang="ja" lang="ja" title="日本語">日本語</a>
+      <a href="../ko/webp-to-png/" hreflang="ko" lang="ko" title="한국어">한국어</a>
+    </div>
+  </div>
+</nav>
+
+<div class="trustbar" id="trustbar"></div>
+
+<div class="wrap">
+  <header>
+    <h1>WebP to <span class="accent">PNG</span></h1>
+    <p class="lede">Turn a WebP into a PNG right here. Transparency is preserved, and this page fetches nothing from anyone while it works.</p>
+    <div class="badges">
+      <span class="badge g">✓ Never uploaded</span>
+      <span class="badge">Zero network requests</span>
+      <span class="badge">Keeps transparency</span>
+      <span class="badge">Batch &amp; ZIP</span>
+      <span class="badge">Unlimited &amp; free</span>
+    </div>
+  </header>
+
+  <main>
+    <div id="tool"></div>
+
+    <section class="content">
+      <h2>Why convert WebP to PNG?</h2>
+      <p>WebP is what websites hand you — Google pushed it, every CDN serves it, and it saves bandwidth. It is also the format that breaks things. Photoshop before 2022 refuses it, plenty of desktop apps, print shops and internal upload tools still reject it, and some document pipelines only accept PNG. PNG in exchange is the one format every piece of software on earth reads, transparency included. So this conversion is usually not about quality at all — it is about making a file <em>acceptable</em> to something that will not take WebP.</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 10l7-7 7 7"/></svg></div>
+          <h4>Opens everywhere</h4>
+          <p>PNG is read by every editor, operating system, printer driver and upload form in existence. No "unsupported file type".</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="#2563eb" stroke="none"/></svg></div>
+          <h4>Transparency kept intact</h4>
+          <p>Both formats carry an alpha channel, so logos, cut-outs and icons come through with clean edges — unlike JPG, which flattens them.</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+          <h4>Nothing leaves your device</h4>
+          <p>This one is stronger than usual: the page loads no codec and makes no request at all while converting. Open DevTools and watch.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>The one thing you should know before converting</h2>
+      <p><b>PNG is lossless, and that is exactly why your file will get much bigger.</b> Most WebP images on the web are <em>lossy</em> — detail was already thrown away when the image was created. Re-wrapping those pixels in a PNG does not bring any of it back. It only stores the same pixels in an uncompressed container. You get a larger file with identical (not better) picture quality.</p>
+      <p>Here is what that looks like measured, across three real WebP files of different sizes:</p>
+      <div class="tablewrap">
+        <table class="data">
+          <thead><tr><th>Source WebP</th><th>PNG output</th><th>Change</th></tr></thead>
+          <tbody>
+            <tr><td class="h">1600×1068 · 294.6 KB</td><td>2.43 MB</td><td class="up">+746%</td></tr>
+            <tr><td class="h">550×368 · 29.6 KB</td><td>361.6 KB</td><td class="up">+1121%</td></tr>
+            <tr><td class="h">386×395 · 27.0 KB</td><td>63.1 KB</td><td class="up">+134%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The smaller the WebP, the worse the ratio — a highly compressed 30 KB file can land above 360 KB. This is not a bug in this tool; it is what "lossless" means. If the file is going somewhere that needs a small size rather than a PNG specifically, the same source exports far smaller:</p>
+      <div class="tablewrap">
+        <table class="data">
+          <thead><tr><th>Output from the 294.6 KB WebP</th><th>File size</th><th>vs source</th></tr></thead>
+          <tbody>
+            <tr><td class="h">PNG (lossless)</td><td>2.43 MB</td><td class="up">+746%</td></tr>
+            <tr><td class="h">JPG at quality 85</td><td>271.6 KB</td><td class="down">−8%</td></tr>
+            <tr><td class="h">JPG at quality 70</td><td>178.5 KB</td><td class="down">−39%</td></tr>
+            <tr><td class="h">WebP at quality 80</td><td>187.2 KB</td><td class="down">−36%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>So: use PNG when something <em>requires</em> PNG or you need transparency. Use JPG or WebP when you only care about the picture. And if you need PNG but the size is the problem, <b>resize</b> — halving the long edge cuts the file to roughly a quarter, which is by far the biggest lever here.</p>
+    </section>
+
+    <section class="content">
+      <h2>How to convert WebP to PNG</h2>
+      <ul>
+        <li><b>Add your files</b> — drag them in, click <i>Choose files</i>, or paste with Ctrl&nbsp;+&nbsp;V. Batches are fine.</li>
+        <li><b>Leave it on PNG</b> if you need a PNG. Flip to JPG or WebP if you would rather have a small file; the toolbar tells you what each does.</li>
+        <li><b>Download</b> individual images, or take the whole batch as a ZIP.</li>
+      </ul>
+      <h3>Which WebP files are supported?</h3>
+      <p>Both lossy and lossless WebP, with or without an alpha channel, including animated files — though only the first frame is converted, because a PNG holds a single image. If you need the animation, keep it as WebP or convert to GIF or video instead.</p>
+    </section>
+
+    <section class="content">
+      <h2>FAQ</h2>
+      <details><summary>Why is the PNG so much bigger than the WebP I started with?</summary><p>WebP compresses hard and PNG does not compress at all — it stores lossless pixels. Measured on our samples the increase ranged from +134% to +1121%. If size matters more than the container format, export JPG or WebP instead; the same 294.6&nbsp;KB source becomes a 178.5&nbsp;KB JPG at quality 70.</p></details>
+      <details><summary>Will converting to PNG improve the quality?</summary><p>No, and any tool that implies otherwise is misleading you. If your WebP is lossy, the detail is already gone. PNG is lossless, which means it will not lose anything <em>further</em> — it cannot recover what was discarded before you got the file. Converting a sharp source to PNG and then editing it is still a good idea, because the lossless container will not degrade each time you save.</p></details>
+      <details><summary>Will I lose transparency?</summary><p>Not on this page — PNG keeps the alpha channel. But be careful if you switch the output to JPG: JPG has no alpha channel at all, so transparent areas come out as a solid colour. If your image has transparency, this page detects it and warns you before you download.</p></details>
+      <details><summary>Is this really free? What's the catch?</summary><p>Free and unlimited, no account, no email, no watermark. There is no server cost to recover because there is no server — your browser does the decoding.</p></details>
+      <details><summary>Does it work without an internet connection?</summary><p>Yes. WebP decoding is built into every browser, so this page needs no codec download. Once the page has loaded you can turn off your network and it will still convert.</p></details>
+      <details><summary>Are my images uploaded anywhere?</summary><p>No. The self-verification panel on this page counts both the number of requests and the total outbound byte size. Convert a batch and it stays at zero — there is nothing to upload.</p></details>
+      <details><summary>What is the largest batch I can convert?</summary><p>No artificial cap. Everything runs on your machine, so the only limit is your own memory. PNG output is large in memory too — a few dozen big images at once will use a lot of RAM.</p></details>
+    </section>
+
+    <section class="related">
+      <h2>Other converters in this set</h2>
+      <p class="rsub">Same engine, same privacy model — your files stay on your device in all of them.</p>
+      <div class="cluster">
+        <a class="tool" href="../heic-to-jpg/">
+          <div class="tt">HEIC → JPG</div>
+          <div class="td">iPhone photos into a format everything can open.</div>
+          <div class="tm">libheif WASM · native on Safari</div>
+        </a>
+        <a class="tool here" href="../webp-to-png/">
+          <div class="tt">WebP → PNG</div>
+          <div class="td">Lossless output with transparency preserved. You are here.</div>
+          <div class="tm">native decode · zero network requests</div>
+        </a>
+        <a class="tool" href="../avif-to-jpg/">
+          <div class="tt">AVIF → JPG</div>
+          <div class="td">The newest image format, opened by the oldest. Handles 10-bit files.</div>
+          <div class="tm">native decode · libavif WASM fallback</div>
+        </a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="../">All converters</a>
+      <a href="../heic-to-jpg/">HEIC → JPG</a>
+      <a href="../webp-to-png/">WebP → PNG</a>
+      <a href="../avif-to-jpg/">AVIF → JPG</a>
+    </div>
+    WebP to PNG · processed locally, always. · <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+
+<script type="module">
+import { mountTool } from '../assets/tool-core.js';
+
+async function looksLikeWebp(file) {
+  const h = new Uint8Array(await file.slice(0, 12).arrayBuffer());
+  const riff = String.fromCharCode(h[0], h[1], h[2], h[3]) === 'RIFF';
+  const webp = String.fromCharCode(h[8], h[9], h[10], h[11]) === 'WEBP';
+  return riff && webp;
+}
+
+async function decodeWebp(buffer, mime, force) {
+  const blob = new Blob([buffer], { type: mime || 'image/webp' });
+  // ?decode=img exercises the <img> branch on a browser that does not need it.
+  if (force !== 'img') {
+    try {
+      const bmp = await createImageBitmap(blob);
+      return { bitmap: bmp, width: bmp.width, height: bmp.height, mode: 'native' };
+    } catch (_) { /* fall through to the <img> route */ }
+  }
+  const url = URL.createObjectURL(blob);
+  const img = await new Promise((res, rej) => {
+    const i = new Image();
+    i.onload = () => res(i);
+    i.onerror = () => rej(new Error("This browser could not decode the WebP file"));
+    i.src = url;
+  });
+  img.close = () => URL.revokeObjectURL(url);   // the engine calls this on remove
+  return { bitmap: img, width: img.naturalWidth, height: img.naturalHeight, mode: 'img' };
+}
+
+mountTool({
+  mount: '#tool',
+  locale: "en",
+  workerId: null,          // no worker, no CDN, no network requests
+  zipName: "webp-to-png.zip",
+  detectAlpha: true,       // warn before JPG flattens a transparent source
+  decode: decodeWebp,
+
+  input: {
+    name: "WebP",
+    dropTitle: "WebP",
+    accept: ".webp,image/webp",
+    ext: /\.webp$/i,
+    mime: "image/webp",
+    sniff: looksLikeWebp,
+    reject: "That does not look like a WebP file. Drop .webp files here — the file structure is checked, not just the name.",
+  },
+
+  formats: [
+    { mime: "image/png", ext: "png", label: "PNG", lossy: false, alpha: true,
+      hint: "PNG is lossless and keeps transparency — but expect a file several times larger than the WebP." },
+    { mime: "image/jpeg", ext: "jpg", label: "JPG", lossy: true, alpha: false,
+      hint: "JPG is much smaller than PNG, but it has no transparency — transparent areas come out solid." },
+    { mime: "image/webp", ext: "webp", label: "WebP", lossy: true, alpha: true,
+      hint: "Re-encodes the image as WebP — useful mainly to shrink an oversized one." },
+  ],
+  format: "image/png",
+
+  quality: 70,
+  qualityHint: "PNG is lossless, so this slider has no effect until you switch to JPG or WebP.",
+  qualityHintByFormat: {
+    "image/png": "PNG is lossless, so this slider has no effect — pick JPG or WebP to trade size against quality.",
+    "image/jpeg": "JPG at 70% cuts our 294.6 KB sample to 178.5 KB while staying visually clean.",
+    "image/webp": "WebP at 70% keeps transparency and beats JPG on size."
+  },
+  resize: [
+    [0, "Keep original size"],
+    [2048, "Max 2048 px (long edge)"],
+    [1280, "Max 1280 px (web / email)"],
+    [800, "Max 800 px (thumbnail)"],
+    [512, "Max 512 px (icon)"],
+  ],
+
+  banner: {
+    grew: "PNG is lossless and WebP is not, so a PNG is normally several times larger — that is the format, not the converter. Resize, or switch to JPG / WebP if the format is not required.",
+    grewByFormat: {
+      "image/jpeg": "JPG is compressing a picture that was already compressed once, so it is not always smaller than the WebP you started with — a heavily compressed source can actually come out larger as JPG. Lower the quality, or let Match original size find the closest setting.",
+      "image/webp": "Re-encoding an already-compressed WebP loses a little quality and does not always make it smaller. If your source was heavily compressed, expect the output to land at roughly the same size."
+    },
+    grewActions: [
+      { label: "Cap at 1280 px (≈4× smaller)", act: "resize:1280" },
+      { label: "Try JPG (−39%)", act: "format:image/jpeg" },
+      { label: "Try WebP (−36%)", act: "format:image/webp" },
+    ],
+  },
+
+  verify: {
+    steps: [
+      "Open DevTools (<code>F12</code>) → <b>Network</b> tab and clear it.",
+      "Drop your own WebP files in and convert them.",
+      "Nothing appears at all. WebP decoding is built into your browser, so there is no codec to download either — <b>this page never talks to a network</b>.",
+    ],
+  },
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "WebP to PNG Converter",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (browser-based)",
+      "description": "Convert WebP images to PNG in the browser with transparency preserved. Files are never uploaded and no codec is downloaded.",
+      "url": "https://example.com/webp-to-png/",
+      "inLanguage": "en",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is the PNG larger than the WebP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PNG is a lossless format while WebP is normally lossy, so the same pixels take far more space. Measured on real files the increase ranged from 134% to 1121%. Converting to PNG cannot restore detail that the WebP already discarded."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does converting WebP to PNG improve quality?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. If the WebP was lossy the detail is already gone; PNG stores the existing pixels without further loss but cannot recover anything."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will transparency be preserved?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes when converting to PNG or WebP, which both carry an alpha channel. JPG has no alpha channel, so transparent areas become a solid colour, and this tool warns you before that happens."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my images uploaded?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The conversion runs entirely in the browser and the page makes no network requests at all while converting."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

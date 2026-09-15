@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HEIC → JPG 변환기 — 무료, 업로드 없음, 개인정보 보호</title>
+<meta name="description" content="아이폰의 HEIC/HEIF 사진을 브라우저에서 바로 JPG로 변환하세요. 100% 비공개 — 파일이 기기 밖으로 나가지 않습니다. 일괄 변환, 품질 조절, ZIP 다운로드 지원. 무료, 가입 없음, 워터마크 없음.">
+<link rel="canonical" href="https://example.com/ko/heic-to-jpg/">
+  <link rel="alternate" hreflang="en" href="https://example.com/heic-to-jpg/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://example.com/zh/heic-to-jpg/">
+  <link rel="alternate" hreflang="ja" href="https://example.com/ja/heic-to-jpg/">
+  <link rel="alternate" hreflang="ko" href="https://example.com/ko/heic-to-jpg/">
+  <link rel="alternate" hreflang="x-default" href="https://example.com/heic-to-jpg/">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232563eb'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='17' font-weight='700' fill='white' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="HEIC → JPG 변환기 — 무료, 업로드 없음, 개인정보 보호">
+<meta property="og:description" content="아이폰 HEIC 사진을 브라우저에서 JPG로 변환. 파일은 기기에서 나가지 않습니다.">
+<meta property="og:url" content="https://example.com/ko/heic-to-jpg/">
+
+<link rel="stylesheet" href="../../assets/tool.css">
+</head>
+<body id="top">
+
+<nav class="sitenav">
+  <div class="wrap">
+    <a class="brand" href="../"><span class="mark">/</span>LocalConvert</a>
+    <ul>
+      <li><a href="../heic-to-jpg/" aria-current="page">HEIC → JPG</a></li>
+      <li><a href="../webp-to-png/">WebP → PNG</a></li>
+      <li><a href="../avif-to-jpg/">AVIF → JPG</a></li>
+    </ul>
+    <div class="langsw" aria-label="언어" role="group">
+      <a href="../../heic-to-jpg/" hreflang="en" lang="en" title="English">EN</a>
+      <a href="../../zh/heic-to-jpg/" hreflang="zh-Hans" lang="zh-Hans" title="简体中文">中文</a>
+      <a href="../../ja/heic-to-jpg/" hreflang="ja" lang="ja" title="日本語">日本語</a>
+      <a href="../../ko/heic-to-jpg/" hreflang="ko" lang="ko" aria-current="page" title="한국어">한국어</a>
+    </div>
+  </div>
+</nav>
+
+<div class="trustbar" id="trustbar"></div>
+
+<div class="wrap">
+  <header>
+    <h1>HEIC → <span class="accent">JPG</span></h1>
+    <p class="lede">아이폰 사진을 여기서 바로 JPG로 바꾸세요. 사용자의 CPU가 로컬에서 디코딩하며, 서버로 업로드되는 것은 아무것도 없습니다.</p>
+    <div class="badges">
+      <span class="badge g">✓ 업로드 없음</span>
+      <span class="badge">일괄 변환</span>
+      <span class="badge">ZIP 다운로드</span>
+      <span class="badge">품질 조절</span>
+      <span class="badge">무료 · 무제한</span>
+    </div>
+  </header>
+
+  <main>
+    <div id="tool"></div>
+
+    <section class="content">
+      <h2>HEIC를 JPG로 바꾸는 이유</h2>
+      <p>HEIC는 아이폰이 기본으로 쓰는 형식이며 같은 사진을 절반 정도 용량에 담습니다. 문제는 그다음입니다. Windows는 유료 코덱 없이는 열지 못하고, 대부분의 브라우저는 여전히 표시하지 못하며, 수많은 업로드 양식과 관공서 사이트, 인쇄소는 아예 거부합니다. HEIC를 고른 건 사용자가 아니라 휴대폰입니다. JPG로 바꾸는 것은 그 파일을 어디서든 쓸 수 있게 만드는 일입니다.</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 10l7-7 7 7"/></svg></div>
+          <h4>어디서나 열림</h4>
+          <p>JPG는 모든 기기, 브라우저, 프린터, 업로드 양식에서 열립니다. 코덱 팩도, "지원하지 않는 형식"도 없습니다.</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+          <h4>파일이 기기를 떠나지 않음</h4>
+          <p>대부분의 변환 서비스는 사진을 사용자가 모르는 서버로 보냅니다. 여기서는 디코딩이 브라우저 탭 안에서 끝나고 아무것도 전송되지 않습니다.</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg></div>
+          <h4>빠르고 무제한</h4>
+          <p>대기열도, 용량 상한도, 시간당 3회 제한도 없습니다. 최신 브라우저는 HEIC를 네이티브로 디코딩하고, 나머지는 WebAssembly 디코더가 처리합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>HEIC를 JPG로 변환하는 방법</h2>
+      <ul>
+        <li><b>파일 추가</b> — 끌어다 놓거나 <i>파일 선택</i>을 클릭하거나 Ctrl&nbsp;+&nbsp;V로 붙여넣으세요. 여러 개를 한 번에 해도 됩니다.</li>
+        <li><b>필요하면 조절</b> — 품질 슬라이더로 용량과 디테일을 맞바꾸거나, 메일·웹용으로 해상도를 제한하세요.</li>
+        <li><b>다운로드</b> — 개별 저장하거나 한 번에 ZIP으로 받으세요.</li>
+      </ul>
+      <h3>출력 용량은 얼마나 될까?</h3>
+      <p>시작하기 전에 알아둘 만합니다. HEIC와 JPG는 압축 효율이 같지 않기 때문입니다. 286.7&nbsp;KB짜리 1440×960 아이폰 사진으로 실측한 결과입니다.</p>
+      <div class="tablewrap">
+        <table class="data">
+          <thead><tr><th>출력 설정</th><th>파일 크기</th><th>원본 대비</th></tr></thead>
+          <tbody>
+            <tr><td class="h">JPG 품질 95</td><td>771 KB</td><td class="up">+169%</td></tr>
+            <tr><td class="h">JPG 품질 85</td><td>482 KB</td><td class="up">+68%</td></tr>
+            <tr><td class="h">JPG 품질 75</td><td>366 KB</td><td class="up">+28%</td></tr>
+            <tr><td class="h">JPG 품질 65</td><td>302 KB</td><td class="up">+5%</td></tr>
+            <tr><td class="h">JPG 품질 55</td><td>260 KB</td><td class="down">−9%</td></tr>
+            <tr><td class="h">원본 크기에 맞추기 (자동)</td><td>283 KB</td><td class="down">−1%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>HEIC 안의 HEVC는 JPEG보다 확실히 효율이 좋고, 그게 애플이 이 형식을 쓰는 이유 전부입니다. 그래서 충실하게 변환한 JPG는 보통 <b>더 큽니다</b>. 인터넷의 모든 변환기가 똑같이 동작합니다. 조절할 수 있는 건 품질 슬라이더와 <b>원본 크기에 맞추기</b> 두 가지이며, 후자는 파일마다 원본 용량에 가장 가까운 설정을 찾습니다.</p>
+    </section>
+
+    <section class="content">
+      <h2>자주 묻는 질문</h2>
+      <details><summary>변환한 JPG가 원본 HEIC보다 큰 이유는?</summary><p>HEIC가 더 효율적인 코덱이기 때문입니다. 같은 화질이라면 HEIC 내부의 HEVC 압축은 JPEG의 절반 정도 바이트로 끝납니다. 애플이 이 형식을 쓰는 이유가 바로 그것입니다. 그래서 같은 사진을 충실하게 JPG로 만들면 보통 더 커집니다. 이 도구가 용량을 낭비하는 게 아니라 어떤 변환기든 같은 결과가 나옵니다. 호환성보다 용량이 중요하면 WebP(JPG보다 약 25% 작음)를 고르거나 <b>원본 크기에 맞추기</b>를 누르세요.</p></details>
+      <details><summary>"원본 크기에 맞추기"는 무엇을 하나요?</summary><p>원본 파일의 바이트 크기에 가장 가까운 JPG 품질을 파일마다 따로 찾습니다. 보통 65~72% 사이에 자리 잡습니다. 화면에서는 차이를 못 느끼면서 파일만 부풀어 오르는 일을 막아줍니다.</p></details>
+      <details><summary>정말 무료인가요? 함정은?</summary><p>무료이고 무제한입니다. 페이지 전체가 브라우저에서 돌아가므로 변환마다 발생하는 서버 비용이 없고, 그 비용을 사용자에게 넘길 일도 없습니다. 계정도, 이메일도, 워터마크도 없습니다.</p></details>
+      <details><summary>사진이 어딘가로 업로드되나요?</summary><p>아니요. 그게 설계의 전부입니다. 브라우저가 디코더를 한 번만 받고 이후 모든 처리를 로컬에서 합니다. 변환하는 동안 개발자 도구의 Network 탭을 열어도 사진을 실은 요청은 나타나지 않습니다. 이 페이지의 패널이 전송 바이트를 대신 세어 줍니다.</p></details>
+      <details><summary>EXIF 같은 메타데이터가 삭제되나요?</summary><p>네, 그리고 모르는 척하기보다 분명히 말씀드립니다. 변환이 canvas를 거치기 때문에 EXIF(GPS 좌표와 촬영 시각 포함)가 사라집니다. 온라인에 사진을 공유하는 대부분에게는 개인정보 보호 측면에서 이득이지만, 업무용으로 EXIF를 유지해야 한다면 데스크톱 도구를 쓰세요.</p></details>
+      <details><summary>어떤 애플·안드로이드 파일을 지원하나요?</summary><p>모든 HEIC/HEIF 컨테이너를 지원합니다. 단일 사진은 물론 일부 안드로이드 기기가 만든 HEIF 파일도 포함됩니다. HEIC 이미지 시퀀스(연사)는 첫 프레임을 변환합니다. Live Photos는 정지 JPG로 변환됩니다.</p></details>
+      <details><summary>첫 변환만 느린 이유는?</summary><p>브라우저가 WebAssembly 디코더를 한 번 받기 때문입니다(약 1.4&nbsp;MB, 이후 캐시). Safari 17.6 이상에서는 브라우저가 HEIC를 네이티브로 처리하므로 이 과정을 통째로 건너뜁니다.</p></details>
+      <details><summary>파일 크기나 개수 제한이 있나요?</summary><p>인위적인 제한은 없습니다. 모든 처리가 사용자 기기에서 이루어지므로 한계는 메모리뿐입니다. 아주 큰 묶음(풀 해상도 40장 이상)은 메모리를 많이 씁니다.</p></details>
+    </section>
+
+    <section class="related">
+      <h2>이 세트의 다른 변환기</h2>
+      <p class="rsub">같은 엔진, 같은 개인정보 보호 모델 — 모두 파일을 기기 안에 남깁니다.</p>
+      <div class="cluster">
+        <a class="tool here" href="../heic-to-jpg/">
+          <div class="tt">HEIC → JPG</div>
+          <div class="td">아이폰 사진을 어디서나 열리는 형식으로. 지금 이 페이지입니다.</div>
+          <div class="tm">libheif WASM · Safari에서는 네이티브</div>
+        </a>
+        <a class="tool" href="../webp-to-png/">
+          <div class="tt">WebP → PNG</div>
+          <div class="td">편집할 수 있는 무손실 PNG를 얻거나 인쇄용으로 WebP를 줄이세요.</div>
+          <div class="tm">네이티브 디코딩 · WASM 미사용</div>
+        </a>
+        <a class="tool" href="../avif-to-jpg/">
+          <div class="tt">AVIF → JPG</div>
+          <div class="td">가장 새로운 이미지 형식을 가장 오래된 형식으로. 10비트 파일도 처리.</div>
+          <div class="tm">네이티브 디코딩 · libavif WASM 폴백</div>
+        </a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="../">모든 변환기</a>
+      <a href="../heic-to-jpg/">HEIC → JPG</a>
+      <a href="../webp-to-png/">WebP → PNG</a>
+      <a href="../avif-to-jpg/">AVIF → JPG</a>
+    </div>
+    HEIC → JPG · 언제나 기기 안에서 처리합니다. · <a href="#top">맨 위로</a>
+  </div>
+</footer>
+
+<!-- =====================================================================
+     Page-specific decoder. Everything else comes from ../assets/tool-core.js.
+     Error strings arrive as self.__MSG, injected by the engine, so this
+     source is identical in every language.
+     ===================================================================== -->
+<script id="heic-worker" type="javascript/worker">
+const LIBHEIF_URL = 'https://cdn.jsdelivr.net/npm/libheif-js@1.23.2/libheif-wasm/libheif-bundle.mjs';
+
+let libheifPromise = null;
+
+function loadLibheif() {
+  if (libheifPromise) return libheifPromise;
+  libheifPromise = (async () => {
+    self.__trackNet(LIBHEIF_URL, 'worker import', 0);
+    const mod = await import(LIBHEIF_URL);
+    const factory = mod.default !== undefined ? mod.default : mod;
+    let inst = typeof factory === 'function' ? factory() : factory;
+    if (inst && typeof inst.then === 'function') inst = await inst;
+    if (!inst || typeof inst.HeifDecoder !== 'function') {
+      throw new Error(self.__MSG.libheifFail);
+    }
+    return inst;
+  })();
+  return libheifPromise;
+}
+
+async function decodeNative(blob) {
+  const bmp = await createImageBitmap(blob);
+  return { bitmap: bmp, width: bmp.width, height: bmp.height, mode: 'native' };
+}
+
+async function decodeWasm(buffer) {
+  const libheif = await loadLibheif();
+  const decoder = new libheif.HeifDecoder();
+  const images = decoder.decode(new Uint8Array(buffer));
+  if (!images || images.length === 0) throw new Error(self.__MSG.noImage);
+
+  const image = images[0];
+  const width = image.get_width();
+  const height = image.get_height();
+  const imageData = new ImageData(width, height);
+
+  const ok = await new Promise((resolve) => {
+    image.display(imageData, (result) => resolve(result || null));
+  });
+  if (!ok) throw new Error(self.__MSG.hevcFail);
+
+  const bitmap = await createImageBitmap(imageData);
+  return { bitmap, width, height, mode: 'wasm' };
+}
+
+self.onmessage = async (e) => {
+  const { id, buffer, mime, force } = e.data;
+  const t0 = performance.now();
+  try {
+    let out;
+    if (force === 'wasm') {
+      out = await decodeWasm(buffer);
+    } else {
+      // Prefer the browser's own decoder when it can actually handle HEIC.
+      try {
+        out = await decodeNative(new Blob([buffer], { type: mime || 'image/heic' }));
+      } catch (_) {
+        out = await decodeWasm(buffer);
+      }
+    }
+    const ms = Math.round(performance.now() - t0);
+    self.postMessage(
+      { id, ok: true, bitmap: out.bitmap, width: out.width, height: out.height, mode: out.mode, ms },
+      [out.bitmap]
+    );
+  } catch (err) {
+    self.postMessage({ id, ok: false, error: (err && err.message) || String(err) });
+  }
+};
+</script>
+
+<script type="module">
+import { mountTool } from '../../assets/tool-core.js';
+
+const HEIC_BRANDS = ['heic', 'heix', 'hevc', 'hevx', 'heim', 'heis', 'mif1', 'msf1'];
+
+// Extensions lie often enough that the container's magic bytes get the final word.
+async function looksLikeHeic(file) {
+  const byName = /\.(heic|heif|heics|heifs)$/i.test(file.name);
+  const head = new Uint8Array(await file.slice(0, 12).arrayBuffer());
+  const ftyp = String.fromCharCode(head[4], head[5], head[6], head[7]) === 'ftyp';
+  if (!ftyp) return byName;
+  const brand = String.fromCharCode(head[8], head[9], head[10], head[11]);
+  return HEIC_BRANDS.includes(brand) || byName;
+}
+
+mountTool({
+  mount: '#tool',
+  locale: "ko",
+  workerId: "heic-worker",
+  zipName: "heic-to-jpg.zip",
+  // Decoder error strings, in this page's language (see workerTag above).
+  workerMsgs: {
+    "libheifFail": "libheif는 로드됐지만 HeifDecoder를 사용할 수 없습니다",
+    "noImage": "이 파일 안에서 이미지를 찾지 못했습니다",
+    "hevcFail": "HEVC 프레임을 디코딩하지 못했습니다"
+  },
+
+  input: {
+    name: "HEIC / HEIF",
+    dropTitle: "HEIC / HEIF",
+    accept: ".heic,.heif,.heics,image/heic,image/heif",
+    ext: /\.(heic|heif|heics|heifs)$/i,
+    mime: "image/heic",
+    sniff: looksLikeHeic,
+    reject: "HEIC/HEIF 파일이 아닙니다. 아이폰의 .heic 또는 .heif 파일을 놓아주세요.",
+  },
+
+  formats: [
+    { mime: "image/jpeg", ext: "jpg", label: "JPG", lossy: true,
+      hint: "JPG는 공유와 인쇄에 가장 안전한 형식입니다." },
+    { mime: "image/png", ext: "png", label: "PNG", lossy: false,
+      hint: "PNG는 무손실입니다 — 10배 정도 커진다고 보세요. 투명도가 필요할 때만 쓰세요." },
+    { mime: "image/webp", ext: "webp", label: "WebP", lossy: true,
+      hint: "같은 품질이면 WebP는 JPG보다 약 25% 작고, 모든 최신 브라우저에서 동작합니다." },
+  ],
+  format: "image/jpeg",
+
+  quality: 70,
+  qualityHint: "HEIC는 같은 사진을 절반 정도 용량에 담기 때문에 출력이 보통 더 큽니다. 70%면 원본에 가깝게 유지됩니다.",
+  qualityHintByFormat: {
+    "image/png": "PNG는 무손실이라 품질 설정이 효과가 없습니다 — 게다가 HEIC보다 훨씬 커집니다.",
+    "image/webp": "WebP는 JPG보다 압축 효율이 좋아 70%로도 여유가 있습니다."
+  },
+
+  banner: {
+    grew: "예상된 결과이며 버그가 아닙니다. HEIC는 같은 사진을 JPG의 절반 정도 바이트로 저장합니다. 품질을 낮추거나 WebP로 바꾸거나, 원본 크기에 맞는 설정을 이 페이지가 찾게 하세요.",
+    grewByFormat: {
+      "image/png": "PNG는 무손실이라 디코딩된 모든 픽셀을 그대로 저장하고, 파일은 원본의 몇 배로 부풀어 오릅니다. 형식의 특성이지 변환기 문제가 아닙니다. 특별한 이유가 없다면 JPG나 WebP를 쓰고, PNG가 꼭 필요하면 해상도를 제한하세요. PNG에서 유일하게 통하는 용량 줄이기 수단입니다."
+    },
+    grewActions: [
+      { label: "⭐ 원본 크기에 맞추기", act: "fit" },
+      { label: "WebP 시도 (JPG 대비 −30%)", act: "format:image/webp" },
+    ],
+  },
+
+  verify: {
+    steps: [
+      "개발자 도구(<code>F12</code>) → <b>Network</b> 탭을 열고 비웁니다.",
+      "가지고 있는 HEIC 파일을 놓고 변환합니다.",
+      "보이는 항목은 CDN의 디코더 라이브러리 하나뿐이고, 두 번째 방문부터는 그것도 나오지 않습니다. <b>사진을 실은 요청은 한 건도 발생하지 않습니다.</b>",
+    ],
+  },
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "HEIC → JPG 변환기",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (browser-based)",
+      "description": "HEIC/HEIF 사진을 브라우저에서 바로 JPG로 변환합니다. 파일은 서버로 업로드되지 않습니다.",
+      "url": "https://example.com/ko/heic-to-jpg/",
+      "inLanguage": "ko",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "사진이 어딘가로 업로드되나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "아니요. 디코딩은 libheif의 WebAssembly 버전을 사용해 브라우저 안에서만 이루어지며, 이미지 데이터는 전송되지 않습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "이 변환기는 무료인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네, 가입과 이메일, 워터마크 없이 무료이고 무제한입니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "EXIF 메타데이터가 유지되나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "아니요. 변환이 canvas를 거치므로 GPS 좌표와 촬영 시각을 포함한 EXIF가 사라집니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "변환한 JPG가 HEIC보다 큰 이유는 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HEIC는 HEVC를 사용하며 같은 화질에서 압축 효율이 JPEG의 약 두 배입니다. 따라서 충실한 JPG는 원본 HEIC보다 보통 더 큽니다. 품질을 낮추거나 원본 크기에 맞추기 기능으로 입력 크기에 가깝게 만드세요."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

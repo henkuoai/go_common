@@ -1,0 +1,26 @@
+# LocalConvert — browser-local image converters
+# Replace example.com with your real domain before deploying. It lives in the
+# 16 generated HTML pages, sitemap.xml, and the link fields of the 30 posts:
+#   grep -rl "example\.com" . --include="*.html" --include="*.xml" --include="*.md"
+
+User-agent: *
+Allow: /
+
+# Social-media copy for each tool lives beside its page, and is repeated
+# under every language prefix. It is source material for Reddit / X / Quora /
+# 小红书, not site content — keep it out of the index so it cannot be read as
+# thin, duplicated pages. Depth 1 covers /heic-to-jpg/posts/, depth 2 covers
+# /zh/heic-to-jpg/posts/.
+Disallow: /posts/
+Disallow: /*/posts/
+Disallow: /*/*/posts/
+
+# Build and verification tooling. Not part of the deployed site.
+Disallow: /_dev/
+
+# Repo documentation. Harmless if served, but it describes the publishing
+# strategy and there is no reason for it to be crawled or indexed.
+Disallow: /README.md
+Disallow: /POSTING-PLAN.md
+
+Sitemap: https://example.com/sitemap.xml

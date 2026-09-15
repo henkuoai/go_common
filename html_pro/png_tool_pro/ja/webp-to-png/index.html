@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WebP → PNG 変換 — 無料・アップロードなし・透明度を保持</title>
+<meta name="description" content="WebP 画像をブラウザ上で PNG に変換。透明度を保持し、アップロードも登録も不要です。PNG が重すぎる場合は JPG やより小さな WebP で書き出せます。一括変換と ZIP ダウンロードに対応。">
+<link rel="canonical" href="https://example.com/ja/webp-to-png/">
+  <link rel="alternate" hreflang="en" href="https://example.com/webp-to-png/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://example.com/zh/webp-to-png/">
+  <link rel="alternate" hreflang="ja" href="https://example.com/ja/webp-to-png/">
+  <link rel="alternate" hreflang="ko" href="https://example.com/ko/webp-to-png/">
+  <link rel="alternate" hreflang="x-default" href="https://example.com/webp-to-png/">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232563eb'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='17' font-weight='700' fill='white' text-anchor='middle'%3EPN%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="WebP → PNG 変換 — 無料・アップロードなし・透明度を保持">
+<meta property="og:description" content="WebP をブラウザで PNG に変換。透明度はそのまま。ファイルは端末から出ません。">
+<meta property="og:url" content="https://example.com/ja/webp-to-png/">
+
+<link rel="stylesheet" href="../../assets/tool.css">
+</head>
+<body id="top">
+
+<nav class="sitenav">
+  <div class="wrap">
+    <a class="brand" href="../"><span class="mark">/</span>LocalConvert</a>
+    <ul>
+      <li><a href="../heic-to-jpg/">HEIC → JPG</a></li>
+      <li><a href="../webp-to-png/" aria-current="page">WebP → PNG</a></li>
+      <li><a href="../avif-to-jpg/">AVIF → JPG</a></li>
+    </ul>
+    <div class="langsw" aria-label="言語" role="group">
+      <a href="../../webp-to-png/" hreflang="en" lang="en" title="English">EN</a>
+      <a href="../../zh/webp-to-png/" hreflang="zh-Hans" lang="zh-Hans" title="简体中文">中文</a>
+      <a href="../../ja/webp-to-png/" hreflang="ja" lang="ja" aria-current="page" title="日本語">日本語</a>
+      <a href="../../ko/webp-to-png/" hreflang="ko" lang="ko" title="한국어">한국어</a>
+    </div>
+  </div>
+</nav>
+
+<div class="trustbar" id="trustbar"></div>
+
+<div class="wrap">
+  <header>
+    <h1>WebP → <span class="accent">PNG</span></h1>
+    <p class="lede">WebP をその場で PNG に変換します。透明度は保持され、このページは処理中どこからも何も取得しません。</p>
+    <div class="badges">
+      <span class="badge g">✓ アップロードなし</span>
+      <span class="badge">ネットワークリクエスト 0</span>
+      <span class="badge">透明度を保持</span>
+      <span class="badge">一括 &amp; ZIP</span>
+      <span class="badge">無料・無制限</span>
+    </div>
+  </header>
+
+  <main>
+    <div id="tool"></div>
+
+    <section class="content">
+      <h2>なぜ WebP を PNG に変換するのか</h2>
+      <p>WebP は Web サイトが押し付けてくる形式です — Google が推進し、あらゆる CDN が配信し、帯域も節約できます。同時に、最もトラブルを起こしやすい形式でもあります。2022 年より前の Photoshop は拒否し、多くのデスクトップアプリ、プリントショップ、社内アップロードツールも今なお受け付けず、PNG しか受け取らないドキュメント処理も存在します。一方 PNG は、地球上のあらゆるソフトウェアが読める形式で、透明度も扱えます。つまりこの変換は画質の話ではなく、WebP を受け付けない何かにファイルを<em>受け入れてもらう</em>ための作業です。</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 10l7-7 7 7"/></svg></div>
+          <h4>どこでも開ける</h4>
+          <p>PNG はあらゆるエディター、OS、プリンタードライバー、アップロードフォームで読めます。「未対応のファイル形式」はありません。</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="#2563eb" stroke="none"/></svg></div>
+          <h4>透明度がそのまま残る</h4>
+          <p>どちらの形式もアルファチャンネルを持つため、ロゴや切り抜き、アイコンがきれいな輪郭のまま通ります — 透明部分を塗りつぶす JPG とは違います。</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+          <h4>端末から何も出ない</h4>
+          <p>このページはさらに徹底しています。コーデックを読み込まず、変換中はリクエストを 1 件も発しません。開発者ツールでご確認ください。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>変換前に知っておくべき唯一のこと</h2>
+      <p><b>PNG は可逆圧縮であり、それがファイルがずっと大きくなる理由です。</b>Web 上の WebP のほとんどは<em>非可逆</em>です — 画像が作られた時点でディテールはすでに捨てられています。そのピクセルを PNG に詰め直しても戻ってくるわけではなく、同じピクセルを非圧縮の容器に入れるだけです。得られるのは、画質が同じ（良くはならない）ままの、より大きなファイルです。</p>
+      <p>実際の WebP ファイル 3 つで実測した結果がこちらです。</p>
+      <div class="tablewrap">
+        <table class="data">
+          <thead><tr><th>元の WebP</th><th>PNG 出力</th><th>変化</th></tr></thead>
+          <tbody>
+            <tr><td class="h">1600×1068 · 294.6 KB</td><td>2.43 MB</td><td class="up">+746%</td></tr>
+            <tr><td class="h">550×368 · 29.6 KB</td><td>361.6 KB</td><td class="up">+1121%</td></tr>
+            <tr><td class="h">386×395 · 27.0 KB</td><td>63.1 KB</td><td class="up">+134%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>元の WebP が小さいほど比率は悪化します — 強く圧縮された 30 KB のファイルが 360 KB を超えることもあります。これはこのツールの不具合ではなく、「可逆圧縮」の意味そのものです。PNG という形式そのものではなく小ささが必要な場所なら、同じ元ファイルからずっと小さく書き出せます。</p>
+      <div class="tablewrap">
+        <table class="data">
+          <thead><tr><th>294.6 KB の WebP からの出力</th><th>ファイルサイズ</th><th>元ファイル比</th></tr></thead>
+          <tbody>
+            <tr><td class="h">PNG（可逆）</td><td>2.43 MB</td><td class="up">+746%</td></tr>
+            <tr><td class="h">JPG 画質 85</td><td>271.6 KB</td><td class="down">−8%</td></tr>
+            <tr><td class="h">JPG 画質 70</td><td>178.5 KB</td><td class="down">−39%</td></tr>
+            <tr><td class="h">WebP 画質 80</td><td>187.2 KB</td><td class="down">−36%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>つまり、PNG が<em>必須</em>の場合や透明度が必要な場合は PNG を。絵そのものが目的なら JPG か WebP を。PNG が必要でサイズが問題なら<b>リサイズ</b>してください — 長辺を半分にするとファイルはおよそ 4 分の 1 になります。ここで最も効く手段です。</p>
+    </section>
+
+    <section class="content">
+      <h2>WebP を PNG に変換する手順</h2>
+      <ul>
+        <li><b>ファイルを追加</b> — ドラッグするか、<i>ファイルを選択</i>をクリック、Ctrl&nbsp;+&nbsp;V で貼り付け。一括でも問題ありません。</li>
+        <li><b>PNG が必要ならそのまま</b>。小さくしたいなら JPG か WebP に切り替えてください。ツールバーがそれぞれの代償を示します。</li>
+        <li><b>ダウンロード</b> — 個別に保存するか、まとめて ZIP で受け取ります。</li>
+      </ul>
+      <h3>どの WebP ファイルに対応？</h3>
+      <p>非可逆・可逆の両方、アルファチャンネルの有無を問わず対応し、アニメーション WebP も扱えます — ただし PNG は静止画しか持てないため先頭フレームのみです。アニメーションが必要な場合は WebP のままか、GIF や動画への変換をご検討ください。</p>
+    </section>
+
+    <section class="content">
+      <h2>よくある質問</h2>
+      <details><summary>PNG が元の WebP よりずっと大きいのはなぜ？</summary><p>WebP は強く圧縮し、PNG はまったく圧縮しません — 可逆のピクセルをそのまま保持します。当サイトのサンプルでは +134% から +1121% の増加でした。コンテナ形式よりサイズが重要な場合は JPG か WebP で書き出してください。同じ 294.6&nbsp;KB の元ファイルが、画質 70 なら 178.5&nbsp;KB の JPG になります。</p></details>
+      <details><summary>PNG に変換すると画質は良くなる？</summary><p>いいえ、そう示唆するツールは誤解を与えています。元の WebP が非可逆ならディテールはすでに失われています。PNG が可逆だというのは「これ以上失わない」という意味で、あなたがファイルを受け取る前に捨てられたものを取り戻すことはできません。シャープな元画像を PNG にしてから編集するのは依然として有効です。可逆の容器なら保存のたびに劣化しないからです。</p></details>
+      <details><summary>透明度は失われる？</summary><p>このページでは失われません — PNG はアルファチャンネルを保持します。ただし出力を JPG に切り替える場合は注意してください。JPG にアルファチャンネルは存在せず、透明部分は単色になります。画像に透明度がある場合、このページが検出してダウンロード前に警告します。</p></details>
+      <details><summary>本当に無料？ 裏はある？</summary><p>無料で無制限、アカウントもメールも透かしもありません。サーバーがないので回収すべきサーバー費用もありません — デコードはあなたのブラウザが行います。</p></details>
+      <details><summary>インターネット接続がなくても動く？</summary><p>はい。WebP のデコードはすべてのブラウザに組み込まれているため、コーデックのダウンロードが不要です。ページを読み込んだ後はネットワークを切っても変換できます。</p></details>
+      <details><summary>画像はどこかにアップロードされる？</summary><p>いいえ。このページの自己検証パネルは、リクエスト件数と送信バイト数の合計の両方を数えます。一括で変換してもゼロのままです — アップロードするものが何もありません。</p></details>
+      <details><summary>一度に変換できる最大量は？</summary><p>人為的な上限はありません。すべてあなたのマシンで動くため、制限はメモリだけです。PNG 出力はメモリ上でも大きいため、大きな画像を数十枚まとめて処理すると多くのメモリを消費します。</p></details>
+    </section>
+
+    <section class="related">
+      <h2>このセットの他の変換ツール</h2>
+      <p class="rsub">同じエンジン、同じプライバシーモデル — どれもファイルを端末内に留めます。</p>
+      <div class="cluster">
+        <a class="tool" href="../heic-to-jpg/">
+          <div class="tt">HEIC → JPG</div>
+          <div class="td">iPhone の写真を、あらゆる環境で開ける形式に。</div>
+          <div class="tm">libheif WASM · Safari ではネイティブ</div>
+        </a>
+        <a class="tool here" href="../webp-to-png/">
+          <div class="tt">WebP → PNG</div>
+          <div class="td">透明度を保ったままの可逆出力。現在のページです。</div>
+          <div class="tm">ネイティブデコード · ネットワークリクエスト 0</div>
+        </a>
+        <a class="tool" href="../avif-to-jpg/">
+          <div class="tt">AVIF → JPG</div>
+          <div class="td">最新の画像形式を、最古の形式で開く。10 ビットファイルにも対応。</div>
+          <div class="tm">ネイティブデコード · libavif WASM フォールバック</div>
+        </a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="../">すべての変換ツール</a>
+      <a href="../heic-to-jpg/">HEIC → JPG</a>
+      <a href="../webp-to-png/">WebP → PNG</a>
+      <a href="../avif-to-jpg/">AVIF → JPG</a>
+    </div>
+    WebP → PNG · 常に端末内で処理します。 · <a href="#top">トップへ戻る</a>
+  </div>
+</footer>
+
+
+<script type="module">
+import { mountTool } from '../../assets/tool-core.js';
+
+async function looksLikeWebp(file) {
+  const h = new Uint8Array(await file.slice(0, 12).arrayBuffer());
+  const riff = String.fromCharCode(h[0], h[1], h[2], h[3]) === 'RIFF';
+  const webp = String.fromCharCode(h[8], h[9], h[10], h[11]) === 'WEBP';
+  return riff && webp;
+}
+
+async function decodeWebp(buffer, mime, force) {
+  const blob = new Blob([buffer], { type: mime || 'image/webp' });
+  // ?decode=img exercises the <img> branch on a browser that does not need it.
+  if (force !== 'img') {
+    try {
+      const bmp = await createImageBitmap(blob);
+      return { bitmap: bmp, width: bmp.width, height: bmp.height, mode: 'native' };
+    } catch (_) { /* fall through to the <img> route */ }
+  }
+  const url = URL.createObjectURL(blob);
+  const img = await new Promise((res, rej) => {
+    const i = new Image();
+    i.onload = () => res(i);
+    i.onerror = () => rej(new Error("このブラウザでは WebP ファイルをデコードできませんでした"));
+    i.src = url;
+  });
+  img.close = () => URL.revokeObjectURL(url);   // the engine calls this on remove
+  return { bitmap: img, width: img.naturalWidth, height: img.naturalHeight, mode: 'img' };
+}
+
+mountTool({
+  mount: '#tool',
+  locale: "ja",
+  workerId: null,          // no worker, no CDN, no network requests
+  zipName: "webp-to-png.zip",
+  detectAlpha: true,       // warn before JPG flattens a transparent source
+  decode: decodeWebp,
+
+  input: {
+    name: "WebP",
+    dropTitle: "WebP",
+    accept: ".webp,image/webp",
+    ext: /\.webp$/i,
+    mime: "image/webp",
+    sniff: looksLikeWebp,
+    reject: "WebP ファイルではないようです。.webp ファイルをドロップしてください — ファイル名だけでなく構造を検査しています。",
+  },
+
+  formats: [
+    { mime: "image/png", ext: "png", label: "PNG", lossy: false, alpha: true,
+      hint: "PNG は可逆で透明度も保てます — ただし WebP の数倍のサイズになります。" },
+    { mime: "image/jpeg", ext: "jpg", label: "JPG", lossy: true, alpha: false,
+      hint: "JPG は PNG よりずっと小さいですが、透明度はありません — 透明部分は単色になります。" },
+    { mime: "image/webp", ext: "webp", label: "WebP", lossy: true, alpha: true,
+      hint: "WebP として再エンコードします — 主に大きすぎるファイルを軽くする用途です。" },
+  ],
+  format: "image/png",
+
+  quality: 70,
+  qualityHint: "PNG は可逆圧縮のため、JPG か WebP に切り替えるまでこのスライダーは効きません。",
+  qualityHintByFormat: {
+    "image/png": "PNG は可逆なのでこのスライダーは効きません — 容量と画質を天秤にかけるには JPG か WebP を選んでください。",
+    "image/jpeg": "画質 70 なら、294.6 KB のサンプルが 178.5 KB になり、見た目もきれいなままです。",
+    "image/webp": "画質 70 の WebP は透明度を保ち、容量でも JPG を上回ります。"
+  },
+  presets: [[55, "小さめ"], [70, "バランス"], [85, "高画質"], [95, "最高"]],
+  resize: [
+    [0, "元のサイズを維持"],
+    [2048, "長辺 2048 px まで"],
+    [1280, "長辺 1280 px まで（Web・メール）"],
+    [800, "長辺 800 px まで（サムネイル）"],
+    [512, "長辺 512 px まで（アイコン）"],
+  ],
+
+  banner: {
+    grew: "PNG は可逆、WebP は非可逆のため、PNG は通常数倍の大きさになります — これは形式の性質で、変換ツールの問題ではありません。リサイズするか、PNG が不要なら JPG / WebP に切り替えてください。",
+    grewByFormat: {
+      "image/jpeg": "JPG は一度圧縮された画像をさらに圧縮するため、元の WebP より常に小さいとは限りません — 強く圧縮された元ファイルは JPG にすると逆に大きくなることがあります。画質を下げるか、「元のサイズに合わせる」で最も近い設定を探させてください。",
+      "image/webp": "すでに圧縮済みの WebP を再エンコードすると画質が少し落ち、常に小さくなるわけでもありません。元が強く圧縮されていれば、出力はほぼ同じサイズになると考えてください。"
+    },
+    grewActions: [
+      { label: "1280 px に制限（約 4 倍軽量）", act: "resize:1280" },
+      { label: "JPG を試す（−39%）", act: "format:image/jpeg" },
+      { label: "WebP を試す（−36%）", act: "format:image/webp" },
+    ],
+  },
+
+  verify: {
+    steps: [
+      "開発者ツール（<code>F12</code>）→ <b>Network</b> タブを開き、内容をクリアします。",
+      "お手持ちの WebP ファイルをドロップして変換します。",
+      "何も表示されません。WebP のデコードはブラウザに組み込まれているため、ダウンロードするコーデックもありません — <b>このページはネットワークと一切通信しません</b>。",
+    ],
+  },
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "WebP → PNG 変換ツール",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (browser-based)",
+      "description": "WebP 画像を透明度を保ったままブラウザ上で PNG に変換。ファイルはアップロードされず、コーデックもダウンロードしません。",
+      "url": "https://example.com/ja/webp-to-png/",
+      "inLanguage": "ja",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "PNG が WebP より大きいのはなぜですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PNG は可逆形式で WebP は通常非可逆のため、同じピクセルがはるかに多くの容量を占めます。実ファイルでの実測では 134% から 1121% の増加でした。PNG に変換しても、WebP がすでに捨てたディテールは取り戻せません。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "WebP を PNG に変換すると画質は上がりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "いいえ。WebP が非可逆ならディテールはすでに失われています。PNG は既存のピクセルをさらに損失なく保存しますが、何かを復元することはできません。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "透明度は保持されますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PNG または WebP への変換時は保持されます。どちらもアルファチャンネルを持つためです。JPG にアルファチャンネルはなく透明部分が単色になるため、このツールはその前に警告します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "画像はアップロードされますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "いいえ。変換はすべてブラウザ内で実行され、変換中にページがネットワークリクエストを発することは一切ありません。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

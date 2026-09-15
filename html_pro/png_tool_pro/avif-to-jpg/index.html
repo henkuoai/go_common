@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AVIF to JPG Converter — Free, Private, No Upload</title>
+<meta name="description" content="Convert AVIF images to JPG in your browser. Handles 10-bit files, keeps transparency when you need it, no upload and no signup. Batch convert and ZIP download.">
+<link rel="canonical" href="https://example.com/avif-to-jpg/">
+  <link rel="alternate" hreflang="en" href="https://example.com/avif-to-jpg/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://example.com/zh/avif-to-jpg/">
+  <link rel="alternate" hreflang="ja" href="https://example.com/ja/avif-to-jpg/">
+  <link rel="alternate" hreflang="ko" href="https://example.com/ko/avif-to-jpg/">
+  <link rel="alternate" hreflang="x-default" href="https://example.com/avif-to-jpg/">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232563eb'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='17' font-weight='700' fill='white' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AVIF to JPG Converter — Free, Private, No Upload">
+<meta property="og:description" content="Convert AVIF images to JPG in your browser. Files never leave your device.">
+<meta property="og:url" content="https://example.com/avif-to-jpg/">
+
+<link rel="stylesheet" href="../assets/tool.css">
+</head>
+<body id="top">
+
+<nav class="sitenav">
+  <div class="wrap">
+    <a class="brand" href="../"><span class="mark">/</span>LocalConvert</a>
+    <ul>
+      <li><a href="../heic-to-jpg/">HEIC → JPG</a></li>
+      <li><a href="../webp-to-png/">WebP → PNG</a></li>
+      <li><a href="../avif-to-jpg/" aria-current="page">AVIF → JPG</a></li>
+    </ul>
+    <div class="langsw" aria-label="Language" role="group">
+      <a href="../avif-to-jpg/" hreflang="en" lang="en" aria-current="page" title="English">EN</a>
+      <a href="../zh/avif-to-jpg/" hreflang="zh-Hans" lang="zh-Hans" title="简体中文">中文</a>
+      <a href="../ja/avif-to-jpg/" hreflang="ja" lang="ja" title="日本語">日本語</a>
+      <a href="../ko/avif-to-jpg/" hreflang="ko" lang="ko" title="한국어">한국어</a>
+    </div>
+  </div>
+</nav>
+
+<div class="trustbar" id="trustbar"></div>
+
+<div class="wrap">
+  <header>
+    <h1>AVIF to <span class="accent">JPG</span></h1>
+    <p class="lede">AVIF is the newest image format and the one most likely to break something. Convert it to JPG here, locally — nothing is uploaded to a server.</p>
+    <div class="badges">
+      <span class="badge g">✓ Never uploaded</span>
+      <span class="badge">Handles 10-bit AVIF</span>
+      <span class="badge">Batch &amp; ZIP</span>
+      <span class="badge">Transparency aware</span>
+      <span class="badge">Unlimited &amp; free</span>
+    </div>
+  </header>
+
+  <main>
+    <div id="tool"></div>
+
+    <section class="content">
+      <h2>Why convert AVIF to JPG?</h2>
+      <p>AVIF is built on the AV1 video codec and it is genuinely excellent — around twice as compact as JPEG at the same visual quality, with proper support for transparency and high dynamic range. The catch is everything else. Modern CDNs now serve AVIF to your browser automatically without telling you, so files land in your downloads folder in a format that older Photoshop, many Windows tools, most office suites, print pipelines and a long list of upload forms simply will not open.</p>
+      <p>JPG is the opposite trade: mediocre compression, universal acceptance. That makes this conversion the standard rescue move — you are not converting to get a better image, you are converting to get an image that <em>everything can read</em>.</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 10l7-7 7 7"/></svg></div>
+          <h4>Opens on anything</h4>
+          <p>JPG is accepted by every editor, printer, browser and upload form made in the last thirty years. That is the whole point of converting.</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+          <h4>10-bit and HDR files</h4>
+          <p>AVIF is often 10-bit while JPG is 8-bit. Files are read correctly here, but see the note below on what that means for HDR.</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+          <h4>Files never leave your device</h4>
+          <p>Decoding happens in your browser tab. Most converters upload your files to a server you know nothing about — this one cannot.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>What output size should you expect?</h2>
+      <p>AVIF and HEIC are close cousins in efficiency — both beat JPEG by roughly a factor of two on the same picture. So a faithful JPG is normally <em>larger</em> than the AVIF you started from. Measured on a 1600×1068 AVIF of 168.3&nbsp;KB:</p>
+      <div class="tablewrap">
+        <table class="data">
+          <thead><tr><th>Output setting</th><th>File size</th><th>vs original</th></tr></thead>
+          <tbody>
+            <tr><td class="h">PNG (lossless)</td><td>2.26 MB</td><td class="up">+1273%</td></tr>
+            <tr><td class="h">JPG quality 95</td><td>442.8 KB</td><td class="up">+163%</td></tr>
+            <tr><td class="h">JPG quality 85</td><td>258.7 KB</td><td class="up">+54%</td></tr>
+            <tr><td class="h">JPG quality 80</td><td>219.6 KB</td><td class="up">+31%</td></tr>
+            <tr><td class="h">JPG quality 75</td><td>191.2 KB</td><td class="up">+14%</td></tr>
+            <tr><td class="h">JPG quality 70 <span style="color:#059669">← default</span></td><td>173.2 KB</td><td class="up">+3%</td></tr>
+            <tr><td class="h">JPG quality 65</td><td>157.5 KB</td><td class="down">−6%</td></tr>
+            <tr><td class="h">WebP quality 80</td><td>161.2 KB</td><td class="down">−4%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>That is why the default here is <b>quality 70</b> rather than the 85 or 90 most converters ship: it lands within a few percent of the original file size, so the first thing you see is not a file that tripled. You can always push it up, and <b>Match original size</b> will search per file for the setting that lands closest to what you started with.</p>
+    </section>
+
+    <section class="content">
+      <h2>Two honest limitations</h2>
+      <h3>10-bit and HDR AVIF</h3>
+      <p>AVIF commonly stores 10 bits per channel; JPG stores 8. Conversion here goes through an 8-bit canvas, so a high dynamic range AVIF will be tone-mapped down and may look flatter or differently graded than it did in an HDR-aware viewer. For ordinary photos shot in SDR you will not notice. If you specifically need to preserve HDR, keep the AVIF or convert with a desktop tool that supports it.</p>
+      <h3>Transparency</h3>
+      <p>AVIF supports an alpha channel and JPG does not. If your file has transparency and you convert to JPG, those areas become a solid colour. This page checks for transparency as soon as a file is decoded and warns you before you download, rather than letting you discover it later. Switch the output to PNG or WebP to keep it.</p>
+    </section>
+
+    <section class="content">
+      <h2>How to convert AVIF to JPG</h2>
+      <ul>
+        <li><b>Add your files</b> — drag them in, click <i>Choose files</i>, or paste with Ctrl&nbsp;+&nbsp;V. Batches are fine.</li>
+        <li><b>Leave quality at 70</b> for output close to the original size, raise it if you want more headroom, or press <b>Match original size</b> to let the page decide per image.</li>
+        <li><b>Download</b> individually, or grab the whole batch as a ZIP.</li>
+      </ul>
+    </section>
+
+    <section class="content">
+      <h2>FAQ</h2>
+      <details><summary>Why is my JPG bigger than the AVIF I started with?</summary><p>Because AVIF compresses roughly twice as efficiently as JPEG for the same visual quality, and that is exactly why CDNs serve it. Any faithful JPG has to spend more bytes to store the same picture. Quality 70 brings it back to around +3%; the WebP option actually comes out slightly smaller than the original AVIF.</p></details>
+      <details><summary>Is AVIF better than JPG?</summary><p>For compression, yes — substantially better. For compatibility, no, and it is not close. AVIF needs a recent browser and a recent image editor; JPG needs nothing. The right answer depends on which of those two problems you have.</p></details>
+      <details><summary>Does it handle 10-bit AVIF files?</summary><p>Yes, they decode correctly, including the 10-bit test file used to build this page. What it cannot do is keep the extra bit depth — the output is 8-bit JPG, so HDR files lose their extended range. See the limitations section above.</p></details>
+      <details><summary>Will I lose transparency?</summary><p>Only if you choose JPG, which has no alpha channel at all. This page detects transparency after decoding and warns you with a one-click switch to PNG or WebP, which both preserve it.</p></details>
+      <details><summary>Are my files uploaded anywhere?</summary><p>No. The panel on this page counts the number of outbound requests and the total outbound byte size; converting a file keeps both at zero apart from the one-time decoder download.</p></details>
+      <details><summary>Why is the first conversion slower?</summary><p>On any recent Chrome, Firefox, Edge or Safari your browser decodes AVIF itself and the first conversion is instant. On an older browser this page loads a WebAssembly build of libavif (about 1.2&nbsp;MB, then cached) so that the file still converts instead of failing.</p></details>
+      <details><summary>Is this really free? What's the catch?</summary><p>Free and unlimited, no account, no email, no watermark. There is no server doing the work, so there is no per-conversion cost to pass on to you.</p></details>
+      <details><summary>Is there a file size or count limit?</summary><p>No artificial limit. Everything is processed on your machine, so the only ceiling is your own memory. Very large batches of full-resolution images will use a lot of RAM.</p></details>
+    </section>
+
+    <section class="related">
+      <h2>Other converters in this set</h2>
+      <p class="rsub">Same engine, same privacy model — your files stay on your device in all of them.</p>
+      <div class="cluster">
+        <a class="tool" href="../heic-to-jpg/">
+          <div class="tt">HEIC → JPG</div>
+          <div class="td">iPhone photos into a format everything can open.</div>
+          <div class="tm">libheif WASM · native on Safari</div>
+        </a>
+        <a class="tool" href="../webp-to-png/">
+          <div class="tt">WebP → PNG</div>
+          <div class="td">Lossless output with transparency preserved.</div>
+          <div class="tm">native decode · zero network requests</div>
+        </a>
+        <a class="tool here" href="../avif-to-jpg/">
+          <div class="tt">AVIF → JPG</div>
+          <div class="td">The newest image format, opened by the oldest. You are here.</div>
+          <div class="tm">native decode · libavif WASM fallback</div>
+        </a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="../">All converters</a>
+      <a href="../heic-to-jpg/">HEIC → JPG</a>
+      <a href="../webp-to-png/">WebP → PNG</a>
+      <a href="../avif-to-jpg/">AVIF → JPG</a>
+    </div>
+    AVIF to JPG · processed locally, always. · <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+<!-- =====================================================================
+     Page-specific decoder. Everything else comes from ../assets/tool-core.js.
+     Error strings arrive as self.__MSG, injected by the engine, so this
+     source is identical in every language.
+     ===================================================================== -->
+<script id="avif-worker" type="javascript/worker">
+const LIBAVIF_URL = 'https://cdn.jsdelivr.net/npm/@jsquash/avif@2.1.1/decode.js';
+
+let decoderPromise = null;
+
+function loadDecoder() {
+  if (decoderPromise) return decoderPromise;
+  decoderPromise = (async () => {
+    self.__trackNet(LIBAVIF_URL, 'worker import', 0);
+    const mod = await import(LIBAVIF_URL);
+    const decode = mod.default;
+    if (typeof decode !== 'function') throw new Error(self.__MSG.libavifFail);
+    return decode;
+  })();
+  return decoderPromise;
+}
+
+async function decodeNative(blob) {
+  const bmp = await createImageBitmap(blob);
+  return { bitmap: bmp, width: bmp.width, height: bmp.height, mode: 'native' };
+}
+
+async function decodeWasm(buffer) {
+  const decode = await loadDecoder();
+  const imageData = await decode(buffer);
+  if (!imageData || !imageData.width) throw new Error(self.__MSG.noImage);
+  const bitmap = await createImageBitmap(imageData);
+  return { bitmap, width: imageData.width, height: imageData.height, mode: 'wasm' };
+}
+
+self.onmessage = async (e) => {
+  const { id, buffer, mime, force } = e.data;
+  const t0 = performance.now();
+  try {
+    let out;
+    if (force === 'wasm') {
+      out = await decodeWasm(buffer);
+    } else {
+      try {
+        out = await decodeNative(new Blob([buffer], { type: mime || 'image/avif' }));
+      } catch (_) {
+        out = await decodeWasm(buffer);
+      }
+    }
+    const ms = Math.round(performance.now() - t0);
+    self.postMessage(
+      { id, ok: true, bitmap: out.bitmap, width: out.width, height: out.height, mode: out.mode, ms },
+      [out.bitmap]
+    );
+  } catch (err) {
+    self.postMessage({ id, ok: false, error: (err && err.message) || String(err) });
+  }
+};
+</script>
+
+<script type="module">
+import { mountTool } from '../assets/tool-core.js';
+
+async function looksLikeAvif(file) {
+  const h = new Uint8Array(await file.slice(0, 12).arrayBuffer());
+  const ftyp = String.fromCharCode(h[4], h[5], h[6], h[7]) === 'ftyp';
+  const brand = String.fromCharCode(h[8], h[9], h[10], h[11]);
+  return ftyp && (brand === 'avif' || brand === 'avis' || /\.avif$/i.test(file.name));
+}
+
+mountTool({
+  mount: '#tool',
+  locale: "en",
+  workerId: "avif-worker",
+  zipName: "avif-to-jpg.zip",
+  // Decoder error strings, in this page's language (see workerTag above).
+  workerMsgs: {
+    "libavifFail": "The libavif fallback decoder did not load",
+    "noImage": "No image found inside this file",
+    "libheifFail": "",
+    "hevcFail": ""
+  },
+  detectAlpha: true,       // warn before JPG flattens a transparent source
+
+  input: {
+    name: "AVIF",
+    dropTitle: "AVIF",
+    accept: ".avif,image/avif",
+    ext: /\.avif$/i,
+    mime: "image/avif",
+    sniff: looksLikeAvif,
+    reject: "That does not look like an AVIF file. Drop .avif files here — the file structure is checked, not just the name.",
+  },
+
+  formats: [
+    { mime: "image/jpeg", ext: "jpg", label: "JPG", lossy: true, alpha: false,
+      hint: "JPG is the safest for sharing and printing — but it has no transparency." },
+    { mime: "image/png", ext: "png", label: "PNG", lossy: false, alpha: true,
+      hint: "PNG is lossless and keeps transparency — expect a file around 13x larger." },
+    { mime: "image/webp", ext: "webp", label: "WebP", lossy: true, alpha: true,
+      hint: "WebP keeps transparency and lands slightly smaller than the original AVIF." },
+  ],
+  format: "image/jpeg",
+
+  quality: 70,
+  qualityHint: "AVIF compresses about twice as well as JPG, so output is usually larger. 70% keeps it close to your original.",
+  qualityHintByFormat: {
+    "image/jpeg": "At 70% our 168.3 KB AVIF sample becomes a 173.2 KB JPG — within 3% of the original.",
+    "image/png": "PNG is lossless, so quality has no effect — and the file will be roughly 13x larger than the AVIF.",
+    "image/webp": "WebP keeps transparency. At quality 70 it is usually close to or below the original AVIF size."
+  },
+
+  banner: {
+    grew: "AVIF packs the same picture into roughly half the bytes of JPG, so a faithful JPG is normally larger — that is the format, not the converter. Lower the quality, try WebP, or match your original size automatically.",
+    grewByFormat: {
+      "image/png": "PNG is lossless, so it stores every pixel of the decoded image and the file balloons to many times the original. That is the format, not the converter. Use JPG or WebP unless something specifically requires PNG — and if it does, cap the resolution, which is the only size lever PNG gives you."
+    },
+    grewActions: [
+      { label: "⭐ Match original size", act: "fit" },
+      { label: "Try WebP", act: "format:image/webp" },
+      { label: "Try PNG (keeps transparency)", act: "format:image/png" },
+    ],
+  },
+
+  verify: {
+    steps: [
+      "Open DevTools (<code>F12</code>) → <b>Network</b> tab and clear it.",
+      "Drop your own AVIF files in and convert them.",
+      "On a current browser nothing appears at all — the AVIF decoder is built in. On an older one you will see the libavif fallback download once. <b>No request ever carries your image.</b>",
+    ],
+  },
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "AVIF to JPG Converter",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (browser-based)",
+      "description": "Convert AVIF images to JPG in the browser, including 10-bit files, with a libavif WebAssembly fallback for older browsers. Files are never uploaded.",
+      "url": "https://example.com/avif-to-jpg/",
+      "inLanguage": "en",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is the JPG larger than the AVIF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AVIF compresses roughly twice as efficiently as JPEG for the same visual quality, so a faithful JPG needs more bytes to store the same picture. Using quality 70 brings the output to within about 3% of the original AVIF size."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is AVIF better than JPG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AVIF compresses substantially better, but JPG is accepted by far more software. AVIF requires a recent browser and image editor, while JPG opens essentially anywhere."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it convert 10-bit AVIF files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, 10-bit AVIF files decode correctly, but the 8-bit JPG output cannot retain the extra bit depth, so high dynamic range files lose their extended range."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my files uploaded anywhere?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Decoding runs entirely in the browser and the page reports both the number of outbound requests and the total outbound byte size."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# Scoped to png_tool_pro/. The git root is go_common/, which holds unrelated
+# projects, so the rules deliberately live here rather than at the root.
+
+# Verification output: downloaded sample conversions, screenshots and ZIPs.
+# ~27 MB of binaries, regenerated on every verify run. Keep out of history.
+_dev/test-assets/
+
+# Build and verification reports. Regenerated each run.
+_dev/build-report.txt
+_dev/verify-report-final.txt
+_dev/verify-i18n-report.txt
+
+# Scratch copies made while syntax-checking the engine. The real files are
+# assets/tool-core.js and assets/i18n.js. A stale second copy of the engine is
+# actively dangerous: it invites editing the one that is never deployed.
+_dev/_*.mjs
+
+# Dependencies, if playwright-core is installed locally.
+_dev/node_modules/
+_dev/package-lock.json
+
+# OS noise.
+Thumbs.db
+Desktop.ini
+.DS_Store

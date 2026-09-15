@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WebP 转 PNG —— 免费、不上传、保留透明</title>
+<meta name="description" content="在浏览器里把 WebP 图片转成 PNG。保留透明通道，不上传、不用注册。PNG 太大的时候也能导出 JPG 或更小的 WebP。支持批量转换和打包 ZIP 下载。">
+<link rel="canonical" href="https://example.com/zh/webp-to-png/">
+  <link rel="alternate" hreflang="en" href="https://example.com/webp-to-png/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://example.com/zh/webp-to-png/">
+  <link rel="alternate" hreflang="ja" href="https://example.com/ja/webp-to-png/">
+  <link rel="alternate" hreflang="ko" href="https://example.com/ko/webp-to-png/">
+  <link rel="alternate" hreflang="x-default" href="https://example.com/webp-to-png/">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232563eb'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='17' font-weight='700' fill='white' text-anchor='middle'%3EPN%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="WebP 转 PNG —— 免费、不上传、保留透明">
+<meta property="og:description" content="在浏览器里把 WebP 转成 PNG，透明通道完整保留。文件永远不会离开你的设备。">
+<meta property="og:url" content="https://example.com/zh/webp-to-png/">
+
+<link rel="stylesheet" href="../../assets/tool.css">
+</head>
+<body id="top">
+
+<nav class="sitenav">
+  <div class="wrap">
+    <a class="brand" href="../"><span class="mark">/</span>LocalConvert</a>
+    <ul>
+      <li><a href="../heic-to-jpg/">HEIC → JPG</a></li>
+      <li><a href="../webp-to-png/" aria-current="page">WebP → PNG</a></li>
+      <li><a href="../avif-to-jpg/">AVIF → JPG</a></li>
+    </ul>
+    <div class="langsw" aria-label="语言" role="group">
+      <a href="../../webp-to-png/" hreflang="en" lang="en" title="English">EN</a>
+      <a href="../../zh/webp-to-png/" hreflang="zh-Hans" lang="zh-Hans" aria-current="page" title="简体中文">中文</a>
+      <a href="../../ja/webp-to-png/" hreflang="ja" lang="ja" title="日本語">日本語</a>
+      <a href="../../ko/webp-to-png/" hreflang="ko" lang="ko" title="한국어">한국어</a>
+    </div>
+  </div>
+</nav>
+
+<div class="trustbar" id="trustbar"></div>
+
+<div class="wrap">
+  <header>
+    <h1>WebP 转 <span class="accent">PNG</span></h1>
+    <p class="lede">就在这里把 WebP 变成 PNG。透明通道原样保留，而且这个页面在干活的时候，不会向任何地方取任何东西。</p>
+    <div class="badges">
+      <span class="badge g">✓ 从不上传</span>
+      <span class="badge">零网络请求</span>
+      <span class="badge">保留透明通道</span>
+      <span class="badge">批量 + ZIP</span>
+      <span class="badge">免费不限量</span>
+    </div>
+  </header>
+
+  <main>
+    <div id="tool"></div>
+
+    <section class="content">
+      <h2>为什么要把 WebP 转成 PNG？</h2>
+      <p>WebP 是网站塞给你的东西 —— 谷歌在推它，每个 CDN 都在用它，它也确实省带宽。它同时也是最容易让软件翻脸的格式。2022 年之前的 Photoshop 直接拒绝它，很多桌面软件、打印店和内部上传工具至今不认它，还有些文档流程只收 PNG。而 PNG 是地球上每一款软件都读得懂的格式，透明通道也不例外。所以这个转换通常跟画质毫无关系 —— 它只是为了让某个不认 WebP 的地方能<em>收下</em>这个文件。</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 10l7-7 7 7"/></svg></div>
+          <h4>到处都能打开</h4>
+          <p>PNG 被所有编辑器、操作系统、打印机驱动和上传表单读取。不会出现"不支持的文件类型"。</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="#2563eb" stroke="none"/></svg></div>
+          <h4>透明通道完整保留</h4>
+          <p>两种格式都带 alpha 通道，所以 logo、抠图和图标能保持干净的边缘 —— 这一点 JPG 做不到，它会直接把透明区域压平。</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+          <h4>没有任何东西离开你的设备</h4>
+          <p>这一页比通常还要更彻底：它不加载任何解码器，转换期间也不发一个请求。打开开发者工具自己看。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>动手之前，你最该知道的一件事</h2>
+      <p><b>PNG 是无损的，这正是你的文件会大很多的原因。</b>网上大多数 WebP 都是<em>有损</em>的 —— 细节在图片生成的时候就已被丢掉。把这些像素重新装进 PNG 并不会把它们找回来，只是把同样的像素放进了一个未压缩的容器。你得到的是一个更大的文件，画质完全一样（而不是更好）。</p>
+      <p>下面是三个不同体量的真实 WebP 文件实测的结果：</p>
+      <div class="tablewrap">
+        <table class="data">
+          <thead><tr><th>源 WebP</th><th>PNG 输出</th><th>变化</th></tr></thead>
+          <tbody>
+            <tr><td class="h">1600×1068 · 294.6 KB</td><td>2.43 MB</td><td class="up">+746%</td></tr>
+            <tr><td class="h">550×368 · 29.6 KB</td><td>361.6 KB</td><td class="up">+1121%</td></tr>
+            <tr><td class="h">386×395 · 27.0 KB</td><td>63.1 KB</td><td class="up">+134%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>WebP 越小，膨胀比例越夸张 —— 一个压得很狠的 30 KB 文件能落到 360 KB 以上。这不是本工具的 bug，这就是"无损"的含义。如果这份文件要去的地方需要的是小体积而不是 PNG 本身，同一个源文件可以导出小得多的结果：</p>
+      <div class="tablewrap">
+        <table class="data">
+          <thead><tr><th>从那个 294.6 KB 的 WebP 导出</th><th>文件大小</th><th>相比源文件</th></tr></thead>
+          <tbody>
+            <tr><td class="h">PNG（无损）</td><td>2.43 MB</td><td class="up">+746%</td></tr>
+            <tr><td class="h">JPG 质量 85</td><td>271.6 KB</td><td class="down">−8%</td></tr>
+            <tr><td class="h">JPG 质量 70</td><td>178.5 KB</td><td class="down">−39%</td></tr>
+            <tr><td class="h">WebP 质量 80</td><td>187.2 KB</td><td class="down">−36%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>所以：当某个地方<em>要求</em> PNG，或者你需要透明通道时，就用 PNG。只在乎画面本身时，用 JPG 或 WebP。如果你需要 PNG 但体积是问题，那就<b>缩小尺寸</b> —— 长边减半能把文件压到大约四分之一，这是这里最大的杠杆，没有之一。</p>
+    </section>
+
+    <section class="content">
+      <h2>怎么把 WebP 转成 PNG</h2>
+      <ul>
+        <li><b>添加文件</b> —— 拖进来、点<i>选择文件</i>，或者用 Ctrl&nbsp;+&nbsp;V 粘贴。批量也没问题。</li>
+        <li><b>需要 PNG 就让它保持在 PNG</b>。如果更想要小体积，切到 JPG 或 WebP —— 工具栏会告诉你各自的代价。</li>
+        <li><b>下载</b> 单张图片，或者把整批打包成 ZIP 一次拿走。</li>
+      </ul>
+      <h3>支持哪些 WebP 文件？</h3>
+      <p>有损和无损 WebP 都支持，带不带 alpha 通道都行，动图也支持 —— 不过只转换第一帧，因为 PNG 只能装一张静态图。如果你需要动画，请保留为 WebP，或者改转 GIF 或视频。</p>
+    </section>
+
+    <section class="content">
+      <h2>常见问题</h2>
+      <details><summary>为什么 PNG 比原来的 WebP 大这么多？</summary><p>WebP 压得很狠，而 PNG 完全不压缩 —— 它存的是无损像素。在我们的样本上实测，增幅从 +134% 一直到 +1121%。如果体积比容器格式更重要，请改导出 JPG 或 WebP；同一个 294.6&nbsp;KB 的源文件，在质量 70 下会变成 178.5&nbsp;KB 的 JPG。</p></details>
+      <details><summary>转成 PNG 会提升画质吗？</summary><p>不会，任何暗示可以的工具都在误导你。如果你的 WebP 是有损的，细节早就没了。PNG 无损的意思是它不会<em>进一步</em>丢东西 —— 它无法恢复在你拿到文件之前就被丢掉的内容。把清晰的源文件转成 PNG 再编辑仍然是个好主意，因为无损容器在你每次保存时都不会再劣化。</p></details>
+      <details><summary>透明通道会丢吗？</summary><p>在这个页面上不会 —— PNG 会保留 alpha 通道。但如果你把输出切成 JPG 就要注意了：JPG 根本没有 alpha 通道，透明区域会变成一块实色。如果你的图带透明，这个页面会检测到，并在你下载之前提醒你。</p></details>
+      <details><summary>真的免费吗？套路在哪？</summary><p>免费且不限量，不用账号、不留邮箱、不加水印。没有服务器成本需要回收，因为没有服务器 —— 解码是你的浏览器在做。</p></details>
+      <details><summary>断网还能用吗？</summary><p>可以。WebP 解码是所有浏览器自带的，所以这个页面不需要下载任何解码器。页面加载完之后，你可以把网断掉，它照样能转换。</p></details>
+      <details><summary>我的图片会被上传到什么地方吗？</summary><p>不会。这个页面上的自检面板会同时统计请求条数和外发字节总量。转一批试试，它会一直停在零 —— 因为没有东西需要上传。</p></details>
+      <details><summary>一次最多能转多少？</summary><p>没有人为上限。一切都在你自己的机器上跑，所以唯一的限制是你自己的内存。PNG 输出在内存里也很大 —— 一次几十张大图会吃掉大量内存。</p></details>
+    </section>
+
+    <section class="related">
+      <h2>这一组里的其他转换器</h2>
+      <p class="rsub">同一套引擎，同样的隐私模型 —— 它们都把文件留在你的设备上。</p>
+      <div class="cluster">
+        <a class="tool" href="../heic-to-jpg/">
+          <div class="tt">HEIC → JPG</div>
+          <div class="td">把 iPhone 照片变成什么都能打开的格式。</div>
+          <div class="tm">libheif WASM · Safari 原生</div>
+        </a>
+        <a class="tool here" href="../webp-to-png/">
+          <div class="tt">WebP → PNG</div>
+          <div class="td">无损输出，透明通道原样保留。你正在这里。</div>
+          <div class="tm">原生解码 · 零网络请求</div>
+        </a>
+        <a class="tool" href="../avif-to-jpg/">
+          <div class="tt">AVIF → JPG</div>
+          <div class="td">最新的图片格式，交给最老的格式打开。支持 10-bit 文件。</div>
+          <div class="tm">原生解码 · libavif WASM 降级</div>
+        </a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="../">全部转换器</a>
+      <a href="../heic-to-jpg/">HEIC → JPG</a>
+      <a href="../webp-to-png/">WebP → PNG</a>
+      <a href="../avif-to-jpg/">AVIF → JPG</a>
+    </div>
+    WebP 转 PNG · 始终在本地处理。 · <a href="#top">回到顶部</a>
+  </div>
+</footer>
+
+
+<script type="module">
+import { mountTool } from '../../assets/tool-core.js';
+
+async function looksLikeWebp(file) {
+  const h = new Uint8Array(await file.slice(0, 12).arrayBuffer());
+  const riff = String.fromCharCode(h[0], h[1], h[2], h[3]) === 'RIFF';
+  const webp = String.fromCharCode(h[8], h[9], h[10], h[11]) === 'WEBP';
+  return riff && webp;
+}
+
+async function decodeWebp(buffer, mime, force) {
+  const blob = new Blob([buffer], { type: mime || 'image/webp' });
+  // ?decode=img exercises the <img> branch on a browser that does not need it.
+  if (force !== 'img') {
+    try {
+      const bmp = await createImageBitmap(blob);
+      return { bitmap: bmp, width: bmp.width, height: bmp.height, mode: 'native' };
+    } catch (_) { /* fall through to the <img> route */ }
+  }
+  const url = URL.createObjectURL(blob);
+  const img = await new Promise((res, rej) => {
+    const i = new Image();
+    i.onload = () => res(i);
+    i.onerror = () => rej(new Error("这个浏览器无法解码该 WebP 文件"));
+    i.src = url;
+  });
+  img.close = () => URL.revokeObjectURL(url);   // the engine calls this on remove
+  return { bitmap: img, width: img.naturalWidth, height: img.naturalHeight, mode: 'img' };
+}
+
+mountTool({
+  mount: '#tool',
+  locale: "zh",
+  workerId: null,          // no worker, no CDN, no network requests
+  zipName: "webp-to-png.zip",
+  detectAlpha: true,       // warn before JPG flattens a transparent source
+  decode: decodeWebp,
+
+  input: {
+    name: "WebP",
+    dropTitle: "WebP",
+    accept: ".webp,image/webp",
+    ext: /\.webp$/i,
+    mime: "image/webp",
+    sniff: looksLikeWebp,
+    reject: "这看起来不像 WebP 文件。请把 .webp 文件拖到这里 —— 我们检查的是文件结构，不只是文件名。",
+  },
+
+  formats: [
+    { mime: "image/png", ext: "png", label: "PNG", lossy: false, alpha: true,
+      hint: "PNG 无损且保留透明 —— 但体积会是 WebP 的好几倍。" },
+    { mime: "image/jpeg", ext: "jpg", label: "JPG", lossy: true, alpha: false,
+      hint: "JPG 比 PNG 小得多，但它没有透明通道 —— 透明区域会变成实色。" },
+    { mime: "image/webp", ext: "webp", label: "WebP", lossy: true, alpha: true,
+      hint: "重新编码为 WebP —— 主要用来压缩过大的文件。" },
+  ],
+  format: "image/png",
+
+  quality: 70,
+  qualityHint: "PNG 是无损的，所以在你切到 JPG 或 WebP 之前，这个滑块不起作用。",
+  qualityHintByFormat: {
+    "image/png": "PNG 是无损的，所以这个滑块不起作用 —— 选 JPG 或 WebP 才能在体积和画质之间取舍。",
+    "image/jpeg": "质量 70 下，我们那个 294.6 KB 的样本会变成 178.5 KB，观感依然干净。",
+    "image/webp": "质量 70 的 WebP 保留透明通道，而且体积比 JPG 更小。"
+  },
+  presets: [[55, "体积优先"], [70, "均衡"], [85, "清晰优先"], [95, "最清晰"]],
+  resize: [
+    [0, "保持原始尺寸"],
+    [2048, "最长边不超过 2048 px"],
+    [1280, "最长边不超过 1280 px（网页 / 邮件）"],
+    [800, "最长边不超过 800 px（缩略图）"],
+    [512, "最长边不超过 512 px（图标）"],
+  ],
+
+  banner: {
+    grew: "PNG 无损而 WebP 有损，所以 PNG 通常是好几倍大 —— 这是格式决定的，不是转换器的问题。缩小尺寸，或者如果不需要 PNG 就切到 JPG / WebP。",
+    grewByFormat: {
+      "image/jpeg": "JPG 是在压缩一张已经被压缩过的图，所以它不总是比你手里的 WebP 小 —— 压缩得很狠的源文件转成 JPG 反而可能更大。调低质量，或者让\"匹配原始大小\"去找最接近的设置。",
+      "image/webp": "把已经压缩过的 WebP 再编码一次会损失一点画质，而且不总是更小。如果你的源文件压得很狠，输出大概会和它差不多大。"
+    },
+    grewActions: [
+      { label: "压到 1280 px（约小 4 倍）", act: "resize:1280" },
+      { label: "试试 JPG（−39%）", act: "format:image/jpeg" },
+      { label: "试试 WebP（−36%）", act: "format:image/webp" },
+    ],
+  },
+
+  verify: {
+    steps: [
+      "打开开发者工具（<code>F12</code>）→ <b>Network</b> 面板，清空。",
+      "把你自己的 WebP 文件拖进来，然后转换。",
+      "什么都不会出现。WebP 解码是浏览器自带的，所以也没有解码器要下载 —— <b>这个页面从不跟网络打交道</b>。",
+    ],
+  },
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "WebP 转 PNG 转换器",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (browser-based)",
+      "description": "在浏览器里把 WebP 图片转成 PNG，透明通道完整保留。文件永不上传，也不需要下载解码器。",
+      "url": "https://example.com/zh/webp-to-png/",
+      "inLanguage": "zh-Hans",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "为什么 PNG 比 WebP 大？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PNG 是无损格式，而 WebP 通常是有损的，所以同样的像素要占大得多的空间。在真实文件上实测，增幅在 134% 到 1121% 之间。转成 PNG 无法恢复 WebP 已经丢弃的细节。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "WebP 转 PNG 会提升画质吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不会。如果 WebP 是有损的，细节已经没了；PNG 会无损地保存现有像素，但无法恢复任何内容。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "透明通道会被保留吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "转成 PNG 或 WebP 时会，两者都带 alpha 通道。JPG 没有 alpha 通道，透明区域会变成实色，本工具会在那之前提醒你。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "我的图片会被上传吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不会。转换完全在浏览器里进行，页面在转换期间不会发出任何网络请求。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

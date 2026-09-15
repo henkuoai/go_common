@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LocalConvert —— 图片转换，从不上传你的文件</title>
+<meta name="description" content="一组跑在浏览器里的图片转换工具：HEIC 转 JPG、WebP 转 PNG、AVIF 转 JPG。全部在你自己的电脑上完成 —— 不上传、不注册、不加水印。">
+<link rel="canonical" href="https://example.com/zh/">
+  <link rel="alternate" hreflang="en" href="https://example.com/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://example.com/zh/">
+  <link rel="alternate" hreflang="ja" href="https://example.com/ja/">
+  <link rel="alternate" hreflang="ko" href="https://example.com/ko/">
+  <link rel="alternate" hreflang="x-default" href="https://example.com/">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232563eb'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3E/%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="LocalConvert —— 图片转换，从不上传你的文件">
+<meta property="og:description" content="HEIC 转 JPG、WebP 转 PNG、AVIF 转 JPG，全部在浏览器里完成。">
+<meta property="og:url" content="https://example.com/zh/">
+
+<link rel="stylesheet" href="../assets/tool.css">
+</head>
+<body id="top">
+
+<nav class="sitenav">
+  <div class="wrap">
+    <a class="brand" href="./"><span class="mark">/</span>LocalConvert</a>
+    <ul>
+      <li><a href="heic-to-jpg/">HEIC → JPG</a></li>
+      <li><a href="webp-to-png/">WebP → PNG</a></li>
+      <li><a href="avif-to-jpg/">AVIF → JPG</a></li>
+    </ul>
+    <div class="langsw" aria-label="语言" role="group">
+      <a href="../" hreflang="en" lang="en" title="English">EN</a>
+      <a href="../zh/" hreflang="zh-Hans" lang="zh-Hans" aria-current="page" title="简体中文">中文</a>
+      <a href="../ja/" hreflang="ja" lang="ja" title="日本語">日本語</a>
+      <a href="../ko/" hreflang="ko" lang="ko" title="한국어">한국어</a>
+    </div>
+  </div>
+</nav>
+
+<div class="trustbar">
+  <div class="wrap">
+    <span>🔒 <b>100% 在你的浏览器里运行</b></span>
+    <span class="dot-sep">·</span>
+    <span>不上传</span>
+    <span class="dot-sep">·</span>
+    <span>不用注册</span>
+    <span class="dot-sep">·</span>
+    <span>不加水印</span>
+    <span class="dot-sep">·</span>
+    <span>不限文件大小</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <header style="padding-top:52px">
+    <h1>从<span class="accent">不上传</span>你文件的图片转换工具</h1>
+    <p class="lede">这里的每个工具都在你自己的浏览器标签页里干活。没有任何东西发往服务器，没有任何东西被留下来，而且这个说法你可以自己在开发者工具里验证。</p>
+    <div class="badges">
+      <span class="badge g">✓ 本地验证通过</span>
+      <span class="badge">批量转换</span>
+      <span class="badge">打包 ZIP 下载</span>
+      <span class="badge">免费不限量</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="hubgrid">
+      <a class="hubcard" href="heic-to-jpg/">
+        <div class="hicon">HEIC</div>
+        <h3>HEIC 转 JPG</h3>
+        <p>iPhone 带来的麻烦。手机默认拍 HEIC，然后 Windows、浏览器、打印店和各种上传表单都不肯打开它。一次性把整批转成 JPG，该干嘛干嘛去。</p>
+        <span class="go">转换 HEIC → JPG</span>
+      </a>
+      <a class="hubcard" href="webp-to-png/">
+        <div class="hicon">WebP</div>
+        <h3>WebP 转 PNG</h3>
+        <p>网站塞给你的是 WebP，桌面软件认的是 PNG。无损转换、透明通道原样保留 —— 而且这个页面在转换期间不会发出任何网络请求。</p>
+        <span class="go">转换 WebP → PNG</span>
+      </a>
+      <a class="hubcard" href="avif-to-jpg/">
+        <div class="hicon">AVIF</div>
+        <h3>AVIF 转 JPG</h3>
+        <p>最新的格式，也最容易让软件翻脸。支持 10-bit 文件，在 JPG 压平透明区域之前就提醒你，老浏览器上会自动降级到 WebAssembly 解码器。</p>
+        <span class="go">转换 AVIF → JPG</span>
+      </a>
+    </div>
+
+    <section class="content">
+      <h2>为什么"从不上传"是整个设计的出发点</h2>
+      <p>搜索这类转换，你会找到几十个网站在做。它们几乎都是<em>把你的文件上传到服务器</em>，在那边转完再还给你。这意味着你的照片 —— 连同位置信息、里面的人脸、照片里的一切 —— 会待在一台属于陌生人的机器上，待多久由对方决定。大多数时候不会出事。但你没有任何办法核实这一点，而对很多人来说，这已经足够成为换一个工具的理由。</p>
+      <p>这些工具走的是另一条路。你的浏览器本身就带着 JPEG、PNG、WebP 和 AVIF 的解码器，而 libheif 或 libavif 的 WebAssembly 版本补齐了 HEIC 和老浏览器的缺口。编码发生在标签页里的 <code>&lt;canvas&gt;</code> 上。结果是整条链路里根本没有服务器 —— 所以这里的每个页面都自带一个面板，统计它发过多少请求、累加每一条外发数据的体积，让你可以自己核实，而不是选择相信。</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+          <h4>没有东西可存，就没有东西可泄</h4>
+          <p>没有上传，就没有排队，没有留存策略，也没有第三方替你保管图片。</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg></div>
+          <h4>不排队，不设限</h4>
+          <p>干活的是你自己的 CPU，所以没有文件大小上限，没有每小时的额度，也不用排在别人后面。</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 10l7-7 7 7"/></svg></div>
+          <h4>免费，而且没有附加条件</h4>
+          <p>不用账号、不留邮箱、不加水印、不弹升级提示。没有服务器成本，也就没有需要从你身上找补的转换成本。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>这三个工具各自擅长什么</h2>
+      <div class="tablewrap">
+        <table class="data">
+          <thead><tr><th>工具</th><th>解码器</th><th>是否保留透明</th><th>转换时的网络请求</th></tr></thead>
+          <tbody>
+            <tr><td class="h">HEIC → JPG</td><td>原生（Safari）/ libheif WASM</td><td>输出 PNG 或 WebP 时保留</td><td>下载 1 次解码器，之后走缓存</td></tr>
+            <tr><td class="h">WebP → PNG</td><td>浏览器原生自带</td><td>是</td><td><b>完全没有</b></td></tr>
+            <tr><td class="h">AVIF → JPG</td><td>原生 / libavif WASM 降级</td><td>输出 PNG 或 WebP 时保留</td><td>现代浏览器上为零</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>动手之前，有一件事值得先知道</h3>
+      <p>格式互转不会提升画质，而且通常会改变文件体积 —— 有时改变还很大。旧格式的效率就是更低，所以 HEIC 或 AVIF 转成忠实还原的 JPG 通常更大，而任何有损源文件转成 PNG 都会大得离谱。每个工具页都写明了自己那组转换的实测数字，让你在下载前就知道会得到什么；每个页面也都有<b>匹配原始大小</b>选项，会自动找出最接近原始文件的参数。</p>
+    </section>
+
+    <section class="related">
+      <h2>选一个转换器</h2>
+      <p class="rsub">三个工具共用同一套引擎，隐私模型也完全一致。</p>
+      <div class="cluster">
+        <a class="tool" href="heic-to-jpg/">
+          <div class="tt">HEIC → JPG</div>
+          <div class="td">把 iPhone 照片变成什么都能打开的格式。</div>
+          <div class="tm">libheif WASM · Safari 原生</div>
+        </a>
+        <a class="tool" href="webp-to-png/">
+          <div class="tt">WebP → PNG</div>
+          <div class="td">无损输出，透明通道原样保留。</div>
+          <div class="tm">原生解码 · 零网络请求</div>
+        </a>
+        <a class="tool" href="avif-to-jpg/">
+          <div class="tt">AVIF → JPG</div>
+          <div class="td">最新的图片格式，交给最老的格式打开。</div>
+          <div class="tm">原生解码 · libavif WASM 降级</div>
+        </a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="./">全部转换器</a>
+      <a href="heic-to-jpg/">HEIC → JPG</a>
+      <a href="webp-to-png/">WebP → PNG</a>
+      <a href="avif-to-jpg/">AVIF → JPG</a>
+    </div>
+    LocalConvert · 始终在本地处理。 · <a href="#top">回到顶部</a>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "LocalConvert",
+  "description": "从不上传文件的浏览器端图片转换工具。",
+  "url": "https://example.com/zh/",
+  "inLanguage": "zh-Hans",
+  "hasPart": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "HEIC 转 JPG",
+      "url": "https://example.com/zh/heic-to-jpg/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (browser-based)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "WebP 转 PNG",
+      "url": "https://example.com/zh/webp-to-png/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (browser-based)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "AVIF 转 JPG",
+      "url": "https://example.com/zh/avif-to-jpg/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (browser-based)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>

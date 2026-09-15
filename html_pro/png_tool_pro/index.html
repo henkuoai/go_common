@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LocalConvert — Image Converters That Never Upload Your Files</title>
+<meta name="description" content="A small set of browser-based image converters: HEIC to JPG, WebP to PNG, AVIF to JPG. Everything runs on your own machine — no upload, no signup, no watermark.">
+<link rel="canonical" href="https://example.com/">
+  <link rel="alternate" hreflang="en" href="https://example.com/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://example.com/zh/">
+  <link rel="alternate" hreflang="ja" href="https://example.com/ja/">
+  <link rel="alternate" hreflang="ko" href="https://example.com/ko/">
+  <link rel="alternate" hreflang="x-default" href="https://example.com/">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232563eb'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3E/%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="LocalConvert — Image Converters That Never Upload Your Files">
+<meta property="og:description" content="HEIC to JPG, WebP to PNG, AVIF to JPG. All processed in your browser.">
+<meta property="og:url" content="https://example.com/">
+
+<link rel="stylesheet" href="assets/tool.css">
+</head>
+<body id="top">
+
+<nav class="sitenav">
+  <div class="wrap">
+    <a class="brand" href="./"><span class="mark">/</span>LocalConvert</a>
+    <ul>
+      <li><a href="heic-to-jpg/">HEIC → JPG</a></li>
+      <li><a href="webp-to-png/">WebP → PNG</a></li>
+      <li><a href="avif-to-jpg/">AVIF → JPG</a></li>
+    </ul>
+    <div class="langsw" aria-label="Language" role="group">
+      <a href="./" hreflang="en" lang="en" aria-current="page" title="English">EN</a>
+      <a href="zh/" hreflang="zh-Hans" lang="zh-Hans" title="简体中文">中文</a>
+      <a href="ja/" hreflang="ja" lang="ja" title="日本語">日本語</a>
+      <a href="ko/" hreflang="ko" lang="ko" title="한국어">한국어</a>
+    </div>
+  </div>
+</nav>
+
+<div class="trustbar">
+  <div class="wrap">
+    <span>🔒 <b>Runs 100% in your browser</b></span>
+    <span class="dot-sep">·</span>
+    <span>No upload</span>
+    <span class="dot-sep">·</span>
+    <span>No signup</span>
+    <span class="dot-sep">·</span>
+    <span>No watermark</span>
+    <span class="dot-sep">·</span>
+    <span>No file-size limit</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <header style="padding-top:52px">
+    <h1>Image converters that <span class="accent">never upload</span> your files</h1>
+    <p class="lede">Every tool here does its work inside your own browser tab. Nothing is sent to a server, nothing is stored, and you can watch that claim hold up in DevTools.</p>
+    <div class="badges">
+      <span class="badge g">✓ Verified locally</span>
+      <span class="badge">Batch convert</span>
+      <span class="badge">ZIP download</span>
+      <span class="badge">Free &amp; unlimited</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="hubgrid">
+      <a class="hubcard" href="heic-to-jpg/">
+        <div class="hicon">HEIC</div>
+        <h3>HEIC to JPG</h3>
+        <p>The iPhone problem. Your phone shoots HEIC by default, then Windows, browsers, print shops and upload forms refuse to open it. Convert a whole batch to JPG and get on with your day.</p>
+        <span class="go">Convert HEIC → JPG</span>
+      </a>
+      <a class="hubcard" href="webp-to-png/">
+        <div class="hicon">WebP</div>
+        <h3>WebP to PNG</h3>
+        <p>WebP is what websites serve you; PNG is what desktop software accepts. Converts losslessly and keeps transparency — and this page makes no network requests at all while it works.</p>
+        <span class="go">Convert WebP → PNG</span>
+      </a>
+      <a class="hubcard" href="avif-to-jpg/">
+        <div class="hicon">AVIF</div>
+        <h3>AVIF to JPG</h3>
+        <p>The newest format, and the one most likely to break something. Handles 10-bit files, flags transparency before JPG flattens it, and falls back to a WebAssembly decoder on older browsers.</p>
+        <span class="go">Convert AVIF → JPG</span>
+      </a>
+    </div>
+
+    <section class="content">
+      <h2>Why "never uploaded" is the whole design</h2>
+      <p>Search for any of these conversions and you will find dozens of sites that do it. Almost all of them <em>upload your file to a server</em>, convert it there, and hand it back. That means your photo — with its location data, its faces, whatever is in it — sits on a machine belonging to someone you have never met, for a period of time they decide. Most of the time nothing bad happens. But you have no way to verify that, and for a lot of people that is reason enough to look elsewhere.</p>
+      <p>These tools take the other approach. Your browser already contains decoders for JPEG, PNG, WebP and AVIF, and a WebAssembly build of libheif or libavif closes the gap for HEIC and older browsers. Encoding happens on a <code>&lt;canvas&gt;</code> in the tab. The consequence is that there is no server in the loop at all — which is why every page here ships a panel that counts the requests it makes and adds up the size of every outbound payload, so you can check the claim instead of trusting it.</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+          <h4>Nothing to store or leak</h4>
+          <p>There is no upload, so there is no queue, no retention policy and no third party holding your images.</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg></div>
+          <h4>No queue, no limits</h4>
+          <p>Your own CPU does the work, so there is no file-size cap, no hourly allowance and no waiting behind other people.</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 10l7-7 7 7"/></svg></div>
+          <h4>Free with no catch</h4>
+          <p>No account, no email capture, no watermark, no upgrade nag. There is no per-conversion cost to recover because there is no server cost.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>What each tool is actually good at</h2>
+      <div class="tablewrap">
+        <table class="data">
+          <thead><tr><th>Tool</th><th>Decoder</th><th>Keeps transparency</th><th>Network requests while converting</th></tr></thead>
+          <tbody>
+            <tr><td class="h">HEIC → JPG</td><td>native (Safari) / libheif WASM</td><td>with PNG or WebP output</td><td>1 codec download, cached after</td></tr>
+            <tr><td class="h">WebP → PNG</td><td>native, built into every browser</td><td>yes</td><td><b>none at all</b></td></tr>
+            <tr><td class="h">AVIF → JPG</td><td>native / libavif WASM fallback</td><td>with PNG or WebP output</td><td>none on current browsers</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>One thing worth knowing before you convert anything</h3>
+      <p>Converting between formats does not improve quality, and it usually changes the file size — sometimes by a lot. Older formats are simply less efficient, so a faithful JPG of a HEIC or AVIF is typically larger, while a PNG of any lossy source is dramatically larger. Each tool page states the measured numbers for its own conversion so you know what to expect before you download, and every page has a <b>Match original size</b> option that searches for the setting landing closest to the file you started with.</p>
+    </section>
+
+    <section class="related">
+      <h2>Pick a converter</h2>
+      <p class="rsub">All three share the same engine and the same privacy model.</p>
+      <div class="cluster">
+        <a class="tool" href="heic-to-jpg/">
+          <div class="tt">HEIC → JPG</div>
+          <div class="td">iPhone photos into a format everything can open.</div>
+          <div class="tm">libheif WASM · native on Safari</div>
+        </a>
+        <a class="tool" href="webp-to-png/">
+          <div class="tt">WebP → PNG</div>
+          <div class="td">Lossless output with transparency preserved.</div>
+          <div class="tm">native decode · zero network requests</div>
+        </a>
+        <a class="tool" href="avif-to-jpg/">
+          <div class="tt">AVIF → JPG</div>
+          <div class="td">The newest image format, opened by the oldest.</div>
+          <div class="tm">native decode · libavif WASM fallback</div>
+        </a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="./">All converters</a>
+      <a href="heic-to-jpg/">HEIC → JPG</a>
+      <a href="webp-to-png/">WebP → PNG</a>
+      <a href="avif-to-jpg/">AVIF → JPG</a>
+    </div>
+    LocalConvert · processed locally, always. · <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "LocalConvert",
+  "description": "Browser-based image converters that never upload your files.",
+  "url": "https://example.com/",
+  "inLanguage": "en",
+  "hasPart": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "HEIC to JPG",
+      "url": "https://example.com/heic-to-jpg/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (browser-based)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "WebP to PNG",
+      "url": "https://example.com/webp-to-png/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (browser-based)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "AVIF to JPG",
+      "url": "https://example.com/avif-to-jpg/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (browser-based)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>

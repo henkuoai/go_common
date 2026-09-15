@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AVIF 转 JPG —— 免费、不上传、支持 10-bit</title>
+<meta name="description" content="在浏览器里把 AVIF 图片转成 JPG。支持 10-bit 文件，需要时保留透明通道，不上传、不用注册。支持批量转换和打包 ZIP 下载。">
+<link rel="canonical" href="https://example.com/zh/avif-to-jpg/">
+  <link rel="alternate" hreflang="en" href="https://example.com/avif-to-jpg/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://example.com/zh/avif-to-jpg/">
+  <link rel="alternate" hreflang="ja" href="https://example.com/ja/avif-to-jpg/">
+  <link rel="alternate" hreflang="ko" href="https://example.com/ko/avif-to-jpg/">
+  <link rel="alternate" hreflang="x-default" href="https://example.com/avif-to-jpg/">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232563eb'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='17' font-weight='700' fill='white' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AVIF 转 JPG —— 免费、不上传、支持 10-bit">
+<meta property="og:description" content="在浏览器里把 AVIF 转成 JPG。文件永远不会离开你的设备。">
+<meta property="og:url" content="https://example.com/zh/avif-to-jpg/">
+
+<link rel="stylesheet" href="../../assets/tool.css">
+</head>
+<body id="top">
+
+<nav class="sitenav">
+  <div class="wrap">
+    <a class="brand" href="../"><span class="mark">/</span>LocalConvert</a>
+    <ul>
+      <li><a href="../heic-to-jpg/">HEIC → JPG</a></li>
+      <li><a href="../webp-to-png/">WebP → PNG</a></li>
+      <li><a href="../avif-to-jpg/" aria-current="page">AVIF → JPG</a></li>
+    </ul>
+    <div class="langsw" aria-label="语言" role="group">
+      <a href="../../avif-to-jpg/" hreflang="en" lang="en" title="English">EN</a>
+      <a href="../../zh/avif-to-jpg/" hreflang="zh-Hans" lang="zh-Hans" aria-current="page" title="简体中文">中文</a>
+      <a href="../../ja/avif-to-jpg/" hreflang="ja" lang="ja" title="日本語">日本語</a>
+      <a href="../../ko/avif-to-jpg/" hreflang="ko" lang="ko" title="한국어">한국어</a>
+    </div>
+  </div>
+</nav>
+
+<div class="trustbar" id="trustbar"></div>
+
+<div class="wrap">
+  <header>
+    <h1>AVIF 转 <span class="accent">JPG</span></h1>
+    <p class="lede">AVIF 是最新的图片格式，也最容易让别的软件出问题。在这里本地转成 JPG —— 没有任何东西被上传到服务器。</p>
+    <div class="badges">
+      <span class="badge g">✓ 从不上传</span>
+      <span class="badge">支持 10-bit AVIF</span>
+      <span class="badge">批量 + ZIP</span>
+      <span class="badge">能识别透明通道</span>
+      <span class="badge">免费不限量</span>
+    </div>
+  </header>
+
+  <main>
+    <div id="tool"></div>
+
+    <section class="content">
+      <h2>为什么要把 AVIF 转成 JPG？</h2>
+      <p>AVIF 建立在 AV1 视频编码之上，它确实非常出色 —— 同观感下体积约为 JPEG 的一半，还完整支持透明通道和高动态范围。问题出在其他所有环节。现在的 CDN 已经会自动把 AVIF 发给你的浏览器而不告诉你，于是文件以这种格式落进你的下载文件夹，而旧版 Photoshop、许多 Windows 工具、大多数办公套件、印刷流程和一大串上传表单，根本打不开它。</p>
+      <p>JPG 是另一种取舍：压缩效率平庸，但到处都被接受。所以这个转换是标准的"抢救"动作 —— 你不是为了拿到更好的画质而转，而是为了拿到一张<em>什么都能读</em>的图。</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 10l7-7 7 7"/></svg></div>
+          <h4>什么都能打开</h4>
+          <p>JPG 被过去三十年里每一款编辑器、打印机、浏览器和上传表单接受。这就是转换的全部意义。</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+          <h4>10-bit 和 HDR 文件</h4>
+          <p>AVIF 常常是 10-bit，而 JPG 是 8-bit。这里能正确读入文件，但那对 HDR 意味着什么，请看下面的说明。</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+          <h4>文件不离开你的设备</h4>
+          <p>解码发生在你的浏览器标签页里。大多数转换器会把文件上传到一台你完全不了解的服务器 —— 这一个做不到。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>输出体积大概会是多少？</h2>
+      <p>AVIF 和 HEIC 在效率上是近亲 —— 同一张图它们都比 JPEG 好上大约一倍。所以忠实还原的 JPG 通常比源 AVIF <em>更大</em>。下面是拿一张 168.3&nbsp;KB 的 1600×1068 AVIF 实测的结果：</p>
+      <div class="tablewrap">
+        <table class="data">
+          <thead><tr><th>输出设置</th><th>文件大小</th><th>相比原文件</th></tr></thead>
+          <tbody>
+            <tr><td class="h">PNG（无损）</td><td>2.26 MB</td><td class="up">+1273%</td></tr>
+            <tr><td class="h">JPG 质量 95</td><td>442.8 KB</td><td class="up">+163%</td></tr>
+            <tr><td class="h">JPG 质量 85</td><td>258.7 KB</td><td class="up">+54%</td></tr>
+            <tr><td class="h">JPG 质量 80</td><td>219.6 KB</td><td class="up">+31%</td></tr>
+            <tr><td class="h">JPG 质量 75</td><td>191.2 KB</td><td class="up">+14%</td></tr>
+            <tr><td class="h">JPG 质量 70 <span style="color:#059669">← 默认</span></td><td>173.2 KB</td><td class="up">+3%</td></tr>
+            <tr><td class="h">JPG 质量 65</td><td>157.5 KB</td><td class="down">−6%</td></tr>
+            <tr><td class="h">WebP 质量 80</td><td>161.2 KB</td><td class="down">−4%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>这就是为什么这里的默认值是<b>质量 70</b>，而不是大多数转换器出厂的 85 或 90：它落在原始文件体积的几个百分点之内，所以你不会第一眼就看到一个体积翻三倍的文件。你随时可以往上调，而<b>匹配原始大小</b>会针对每个文件搜索最接近你原始文件的设置。</p>
+    </section>
+
+    <section class="content">
+      <h2>两个必须说清楚的限制</h2>
+      <h3>10-bit 和 HDR 的 AVIF</h3>
+      <p>AVIF 通常每通道存 10 bit，JPG 存 8 bit。这里的转换会经过 8-bit 的 canvas，所以高动态范围的 AVIF 会被色调映射压下来，在支持 HDR 的查看器里它可能显得更平，或者色彩不一样。对普通 SDR 拍摄的照片你不会察觉。如果你确实需要保留 HDR，请留着 AVIF，或者用支持它的桌面工具转换。</p>
+      <h3>透明通道</h3>
+      <p>AVIF 支持 alpha 通道，JPG 不支持。如果你的文件带透明，而你又转成了 JPG，那些区域会变成一块实色。这个页面在文件解码完成后就会检查透明通道，并在你下载之前提醒你，而不是让你事后才发现。把输出切成 PNG 或 WebP 就能保留它。</p>
+    </section>
+
+    <section class="content">
+      <h2>怎么把 AVIF 转成 JPG</h2>
+      <ul>
+        <li><b>添加文件</b> —— 拖进来、点<i>选择文件</i>，或者用 Ctrl&nbsp;+&nbsp;V 粘贴。批量也没问题。</li>
+        <li><b>质量保持 70</b>，输出体积会接近原文件；想要更多余量就往上调，或者按<b>匹配原始大小</b>让页面逐张决定。</li>
+        <li><b>下载</b> 单张，或者把整批打包成 ZIP 一次拿走。</li>
+      </ul>
+    </section>
+
+    <section class="content">
+      <h2>常见问题</h2>
+      <details><summary>为什么我转出来的 JPG 比原来的 AVIF 还大？</summary><p>因为 AVIF 在同观感下的压缩效率约为 JPEG 的两倍，而这也正是 CDN 都在用它的原因。任何忠实还原的 JPG 都必须花更多字节来存同一张画。质量 70 能把差距拉回到 +3% 左右；WebP 选项甚至会比原始 AVIF 略小一点。</p></details>
+      <details><summary>AVIF 比 JPG 好吗？</summary><p>论压缩，好得多。论兼容性，不好，而且差得远。AVIF 需要较新的浏览器和较新的图像编辑器；JPG 什么都不需要。正确答案取决于你手里的是哪一个问题。</p></details>
+      <details><summary>它支持 10-bit 的 AVIF 文件吗？</summary><p>支持，能正确解码，包括用来构建这个页面的那个 10-bit 测试文件。它做不到的是保留多出来的位深 —— 输出是 8-bit JPG，所以 HDR 文件会损失扩展范围。请见上面的限制章节。</p></details>
+      <details><summary>透明通道会丢吗？</summary><p>只有在你选 JPG 时会，它完全没有 alpha 通道。这个页面会在解码后检测透明通道，并用一键切换提醒你改用 PNG 或 WebP —— 两者都能保留透明。</p></details>
+      <details><summary>我的文件会被上传到什么地方吗？</summary><p>不会。这个页面上的面板会统计外发请求条数和外发字节总量；转换一个文件时，除了一次性的解码器下载，两者都保持为零。</p></details>
+      <details><summary>为什么第一次转换比较慢？</summary><p>在任何较新的 Chrome、Firefox、Edge 或 Safari 上，你的浏览器自己就能解 AVIF，第一次转换是瞬时的。在老浏览器上，这个页面会加载 libavif 的 WebAssembly 版本（约 1.2&nbsp;MB，之后走缓存），让文件依然能转换，而不是直接失败。</p></details>
+      <details><summary>真的免费吗？套路在哪？</summary><p>免费且不限量，不用账号、不留邮箱、不加水印。干活的是浏览器，没有服务器，也就没有每次转换的成本要转嫁给你。</p></details>
+      <details><summary>有文件大小或数量限制吗？</summary><p>没有人为限制。一切都在你自己的机器上处理，所以唯一的天花板是你自己的内存。全分辨率图片的批次很大时会吃掉大量内存。</p></details>
+    </section>
+
+    <section class="related">
+      <h2>这一组里的其他转换器</h2>
+      <p class="rsub">同一套引擎，同样的隐私模型 —— 它们都把文件留在你的设备上。</p>
+      <div class="cluster">
+        <a class="tool" href="../heic-to-jpg/">
+          <div class="tt">HEIC → JPG</div>
+          <div class="td">把 iPhone 照片变成什么都能打开的格式。</div>
+          <div class="tm">libheif WASM · Safari 原生</div>
+        </a>
+        <a class="tool" href="../webp-to-png/">
+          <div class="tt">WebP → PNG</div>
+          <div class="td">无损输出，透明通道原样保留。</div>
+          <div class="tm">原生解码 · 零网络请求</div>
+        </a>
+        <a class="tool here" href="../avif-to-jpg/">
+          <div class="tt">AVIF → JPG</div>
+          <div class="td">最新的图片格式，交给最老的格式打开。你正在这里。</div>
+          <div class="tm">原生解码 · libavif WASM 降级</div>
+        </a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="../">全部转换器</a>
+      <a href="../heic-to-jpg/">HEIC → JPG</a>
+      <a href="../webp-to-png/">WebP → PNG</a>
+      <a href="../avif-to-jpg/">AVIF → JPG</a>
+    </div>
+    AVIF 转 JPG · 始终在本地处理。 · <a href="#top">回到顶部</a>
+  </div>
+</footer>
+
+<!-- =====================================================================
+     Page-specific decoder. Everything else comes from ../assets/tool-core.js.
+     Error strings arrive as self.__MSG, injected by the engine, so this
+     source is identical in every language.
+     ===================================================================== -->
+<script id="avif-worker" type="javascript/worker">
+const LIBAVIF_URL = 'https://cdn.jsdelivr.net/npm/@jsquash/avif@2.1.1/decode.js';
+
+let decoderPromise = null;
+
+function loadDecoder() {
+  if (decoderPromise) return decoderPromise;
+  decoderPromise = (async () => {
+    self.__trackNet(LIBAVIF_URL, 'worker import', 0);
+    const mod = await import(LIBAVIF_URL);
+    const decode = mod.default;
+    if (typeof decode !== 'function') throw new Error(self.__MSG.libavifFail);
+    return decode;
+  })();
+  return decoderPromise;
+}
+
+async function decodeNative(blob) {
+  const bmp = await createImageBitmap(blob);
+  return { bitmap: bmp, width: bmp.width, height: bmp.height, mode: 'native' };
+}
+
+async function decodeWasm(buffer) {
+  const decode = await loadDecoder();
+  const imageData = await decode(buffer);
+  if (!imageData || !imageData.width) throw new Error(self.__MSG.noImage);
+  const bitmap = await createImageBitmap(imageData);
+  return { bitmap, width: imageData.width, height: imageData.height, mode: 'wasm' };
+}
+
+self.onmessage = async (e) => {
+  const { id, buffer, mime, force } = e.data;
+  const t0 = performance.now();
+  try {
+    let out;
+    if (force === 'wasm') {
+      out = await decodeWasm(buffer);
+    } else {
+      try {
+        out = await decodeNative(new Blob([buffer], { type: mime || 'image/avif' }));
+      } catch (_) {
+        out = await decodeWasm(buffer);
+      }
+    }
+    const ms = Math.round(performance.now() - t0);
+    self.postMessage(
+      { id, ok: true, bitmap: out.bitmap, width: out.width, height: out.height, mode: out.mode, ms },
+      [out.bitmap]
+    );
+  } catch (err) {
+    self.postMessage({ id, ok: false, error: (err && err.message) || String(err) });
+  }
+};
+</script>
+
+<script type="module">
+import { mountTool } from '../../assets/tool-core.js';
+
+async function looksLikeAvif(file) {
+  const h = new Uint8Array(await file.slice(0, 12).arrayBuffer());
+  const ftyp = String.fromCharCode(h[4], h[5], h[6], h[7]) === 'ftyp';
+  const brand = String.fromCharCode(h[8], h[9], h[10], h[11]);
+  return ftyp && (brand === 'avif' || brand === 'avis' || /\.avif$/i.test(file.name));
+}
+
+mountTool({
+  mount: '#tool',
+  locale: "zh",
+  workerId: "avif-worker",
+  zipName: "avif-to-jpg.zip",
+  // Decoder error strings, in this page's language (see workerTag above).
+  workerMsgs: {
+    "libavifFail": "libavif 降级解码器没有加载成功",
+    "noImage": "在这个文件里没有找到图像",
+    "libheifFail": "",
+    "hevcFail": ""
+  },
+  detectAlpha: true,       // warn before JPG flattens a transparent source
+
+  input: {
+    name: "AVIF",
+    dropTitle: "AVIF",
+    accept: ".avif,image/avif",
+    ext: /\.avif$/i,
+    mime: "image/avif",
+    sniff: looksLikeAvif,
+    reject: "这看起来不像 AVIF 文件。请把 .avif 文件拖到这里 —— 我们检查的是文件结构，不只是文件名。",
+  },
+
+  formats: [
+    { mime: "image/jpeg", ext: "jpg", label: "JPG", lossy: true, alpha: false,
+      hint: "JPG 是分享和打印最稳妥的选择 —— 但它没有透明通道。" },
+    { mime: "image/png", ext: "png", label: "PNG", lossy: false, alpha: true,
+      hint: "PNG 无损且保留透明 —— 体积大约是原文件的 13 倍。" },
+    { mime: "image/webp", ext: "webp", label: "WebP", lossy: true, alpha: true,
+      hint: "WebP 保留透明，而且通常比原始 AVIF 略小一点。" },
+  ],
+  format: "image/jpeg",
+
+  quality: 70,
+  qualityHint: "AVIF 的压缩效率约为 JPG 的两倍，所以输出通常更大。70% 能让体积贴近原文件。",
+  qualityHintByFormat: {
+    "image/jpeg": "在 70% 下，我们那个 168.3 KB 的 AVIF 样本会变成 173.2 KB 的 JPG —— 与原文件相差 3% 以内。",
+    "image/png": "PNG 是无损的，所以质量对它无效 —— 而且体积大约是 AVIF 的 13 倍。",
+    "image/webp": "WebP 保留透明通道。在质量 70 下，它通常接近或低于原始 AVIF 的体积。"
+  },
+
+  banner: {
+    grew: "AVIF 把同一张画塞进 JPG 大约一半的字节里，所以忠实还原的 JPG 通常更大 —— 这是格式决定的，不是转换器的问题。调低质量、试试 WebP，或者自动匹配你的原始大小。",
+    grewByFormat: {
+      "image/png": "PNG 是无损的，它会把解码后的每个像素都存下来，体积会膨胀到原文件的很多倍。这是格式决定的，不是转换器的问题。除非有明确要求，否则用 JPG 或 WebP —— 如果确实需要 PNG，那就限制分辨率，这是 PNG 唯一有效的减体积杠杆。"
+    },
+    grewActions: [
+      { label: "⭐ 匹配原始大小", act: "fit" },
+      { label: "试试 WebP", act: "format:image/webp" },
+      { label: "试试 PNG（保留透明）", act: "format:image/png" },
+    ],
+  },
+
+  verify: {
+    steps: [
+      "打开开发者工具（<code>F12</code>）→ <b>Network</b> 面板，清空。",
+      "把你自己的 AVIF 文件拖进来，然后转换。",
+      "在较新的浏览器上什么都不会出现 —— AVIF 解码器是内置的。在老浏览器上你会看到 libavif 降级包下载一次。<b>没有任何请求会携带你的图片。</b>",
+    ],
+  },
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "AVIF 转 JPG 转换器",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (browser-based)",
+      "description": "在浏览器里把 AVIF 图片转成 JPG，支持 10-bit 文件，老浏览器走 libavif WebAssembly 降级。文件永不上传。",
+      "url": "https://example.com/zh/avif-to-jpg/",
+      "inLanguage": "zh-Hans",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "为什么 JPG 比 AVIF 大？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AVIF 在同观感下的压缩效率约为 JPEG 的两倍，所以忠实还原的 JPG 需要更多字节来存同一张画。用质量 70 可以把输出拉到原始 AVIF 体积的 3% 以内。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "AVIF 比 JPG 好吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AVIF 的压缩明显更好，但 JPG 被多得多的软件接受。AVIF 需要较新的浏览器和图像编辑器，而 JPG 几乎到处都能打开。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "能转换 10-bit 的 AVIF 文件吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "能，10-bit AVIF 可以正确解码，但 8-bit 的 JPG 输出无法保留额外的位深，所以 HDR 文件会损失扩展范围。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "我的文件会被上传吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不会。解码完全在浏览器里进行，页面会同时报告外发请求条数和外发字节总量。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

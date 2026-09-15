@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LocalConvert — ファイルを一切アップロードしない画像変換ツール</title>
+<meta name="description" content="ブラウザだけで動く画像変換ツールセット：HEIC → JPG、WebP → PNG、AVIF → JPG。すべてお使いの端末内で処理します。アップロードなし、登録なし、透かしなし。">
+<link rel="canonical" href="https://example.com/ja/">
+  <link rel="alternate" hreflang="en" href="https://example.com/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://example.com/zh/">
+  <link rel="alternate" hreflang="ja" href="https://example.com/ja/">
+  <link rel="alternate" hreflang="ko" href="https://example.com/ko/">
+  <link rel="alternate" hreflang="x-default" href="https://example.com/">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232563eb'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3E/%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="LocalConvert — ファイルを一切アップロードしない画像変換ツール">
+<meta property="og:description" content="HEIC → JPG、WebP → PNG、AVIF → JPG。すべてブラウザ内で処理します。">
+<meta property="og:url" content="https://example.com/ja/">
+
+<link rel="stylesheet" href="../assets/tool.css">
+</head>
+<body id="top">
+
+<nav class="sitenav">
+  <div class="wrap">
+    <a class="brand" href="./"><span class="mark">/</span>LocalConvert</a>
+    <ul>
+      <li><a href="heic-to-jpg/">HEIC → JPG</a></li>
+      <li><a href="webp-to-png/">WebP → PNG</a></li>
+      <li><a href="avif-to-jpg/">AVIF → JPG</a></li>
+    </ul>
+    <div class="langsw" aria-label="言語" role="group">
+      <a href="../" hreflang="en" lang="en" title="English">EN</a>
+      <a href="../zh/" hreflang="zh-Hans" lang="zh-Hans" title="简体中文">中文</a>
+      <a href="../ja/" hreflang="ja" lang="ja" aria-current="page" title="日本語">日本語</a>
+      <a href="../ko/" hreflang="ko" lang="ko" title="한국어">한국어</a>
+    </div>
+  </div>
+</nav>
+
+<div class="trustbar">
+  <div class="wrap">
+    <span>🔒 <b>100% ブラウザ内で処理</b></span>
+    <span class="dot-sep">·</span>
+    <span>アップロードなし</span>
+    <span class="dot-sep">·</span>
+    <span>登録不要</span>
+    <span class="dot-sep">·</span>
+    <span>透かしなし</span>
+    <span class="dot-sep">·</span>
+    <span>ファイルサイズ無制限</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <header style="padding-top:52px">
+    <h1>ファイルを<span class="accent">一切アップロードしない</span>画像変換ツール</h1>
+    <p class="lede">ここにあるツールはすべて、お使いのブラウザのタブ内だけで処理が完結します。サーバーへ送られるものは何もなく、保存されるものも何もありません。その主張は開発者ツールでご自身で確認できます。</p>
+    <div class="badges">
+      <span class="badge g">✓ ローカルで検証済み</span>
+      <span class="badge">一括変換</span>
+      <span class="badge">ZIP ダウンロード</span>
+      <span class="badge">無料・無制限</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="hubgrid">
+      <a class="hubcard" href="heic-to-jpg/">
+        <div class="hicon">HEIC</div>
+        <h3>HEIC → JPG</h3>
+        <p>iPhone がらみの厄介ごと。スマホは既定で HEIC で撮影し、Windows、ブラウザ、プリントショップ、各種アップロードフォームがそれを開こうとしません。まとめて JPG に変換して先に進みましょう。</p>
+        <span class="go">HEIC → JPG に変換</span>
+      </a>
+      <a class="hubcard" href="webp-to-png/">
+        <div class="hicon">WebP</div>
+        <h3>WebP → PNG</h3>
+        <p>Web サイトが配信してくるのが WebP、デスクトップソフトが受け付けるのが PNG。可逆変換で透明度もそのまま — しかもこのページは処理中にネットワークリクエストを一切行いません。</p>
+        <span class="go">WebP → PNG に変換</span>
+      </a>
+      <a class="hubcard" href="avif-to-jpg/">
+        <div class="hicon">AVIF</div>
+        <h3>AVIF → JPG</h3>
+        <p>最も新しい形式であり、最もトラブルを起こしやすい形式でもあります。10 ビットファイルに対応し、JPG が透明部分を塗りつぶす前に警告し、古いブラウザでは WebAssembly デコーダーに自動で切り替わります。</p>
+        <span class="go">AVIF → JPG に変換</span>
+      </a>
+    </div>
+
+    <section class="content">
+      <h2>「アップロードしない」が設計そのものである理由</h2>
+      <p>こうした変換を検索すると、同じことをするサイトが何十も見つかります。そのほとんどが<em>あなたのファイルをサーバーにアップロード</em>し、そこで変換して返してきます。つまり写真は、位置情報や写り込んだ人物などすべて含めて、見ず知らずの誰かのマシン上に、相手が決めた期間だけ置かれることになります。大抵は何も起きません。しかしそれを確認する手段はあなたにはなく、多くの人にとってはそれだけで別のツールを探す理由になります。</p>
+      <p>このツール群は逆のアプローチを取ります。ブラウザには JPEG、PNG、WebP、AVIF のデコーダーがすでに組み込まれており、libheif や libavif の WebAssembly 版が HEIC と古いブラウザの隙間を埋めます。エンコードはタブ内の <code>&lt;canvas&gt;</code> で行われます。結果として、経路にサーバーが一切存在しません。だからこそ各ページには、自分が発したリクエスト数と送信データの合計サイズを表示するパネルが付いており、信じるのではなく自分で確かめられるようになっています。</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+          <h4>保存も漏洩もするものがない</h4>
+          <p>アップロードがなければ、待ち行列も保存ポリシーも、あなたの画像を抱え込む第三者も存在しません。</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg></div>
+          <h4>順番待ちも上限もなし</h4>
+          <p>処理するのはあなた自身の CPU です。ファイルサイズの上限も、時間あたりの回数制限も、他人の後ろで待つこともありません。</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 10l7-7 7 7"/></svg></div>
+          <h4>条件なしで無料</h4>
+          <p>アカウント不要、メール取得なし、透かしなし、アップグレード催促なし。サーバー費用がないので、回収すべき変換コストもありません。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>各ツールが実際に得意なこと</h2>
+      <div class="tablewrap">
+        <table class="data">
+          <thead><tr><th>ツール</th><th>デコーダー</th><th>透明度の保持</th><th>変換中のネットワークリクエスト</th></tr></thead>
+          <tbody>
+            <tr><td class="h">HEIC → JPG</td><td>ネイティブ（Safari）/ libheif WASM</td><td>PNG・WebP 出力時に保持</td><td>デコーダーを 1 回取得、以降はキャッシュ</td></tr>
+            <tr><td class="h">WebP → PNG</td><td>すべてのブラウザに標準搭載</td><td>はい</td><td><b>まったくありません</b></td></tr>
+            <tr><td class="h">AVIF → JPG</td><td>ネイティブ / libavif WASM フォールバック</td><td>PNG・WebP 出力時に保持</td><td>最新ブラウザではゼロ</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>変換を始める前に知っておきたいこと</h3>
+      <p>形式を変換しても画質は向上せず、たいていはファイルサイズが変わります — しかも大きく変わることがあります。古い形式は単純に効率が悪いため、HEIC や AVIF を忠実に JPG 化すると通常は大きくなり、非可逆の元ファイルを PNG にすると桁違いに大きくなります。各ツールページにはその変換の実測値が記載されているので、ダウンロード前に何が得られるか分かります。また全ページに<b>元のサイズに合わせる</b>オプションがあり、元のファイルに最も近くなる設定を自動で探します。</p>
+    </section>
+
+    <section class="related">
+      <h2>変換ツールを選ぶ</h2>
+      <p class="rsub">3 つとも同じエンジンと同じプライバシーモデルを共有しています。</p>
+      <div class="cluster">
+        <a class="tool" href="heic-to-jpg/">
+          <div class="tt">HEIC → JPG</div>
+          <div class="td">iPhone の写真を、あらゆる環境で開ける形式に。</div>
+          <div class="tm">libheif WASM · Safari ではネイティブ</div>
+        </a>
+        <a class="tool" href="webp-to-png/">
+          <div class="tt">WebP → PNG</div>
+          <div class="td">透明度を保ったままの可逆出力。</div>
+          <div class="tm">ネイティブデコード · ネットワークリクエスト 0</div>
+        </a>
+        <a class="tool" href="avif-to-jpg/">
+          <div class="tt">AVIF → JPG</div>
+          <div class="td">最新の画像形式を、最古の形式で開く。</div>
+          <div class="tm">ネイティブデコード · libavif WASM フォールバック</div>
+        </a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="./">すべての変換ツール</a>
+      <a href="heic-to-jpg/">HEIC → JPG</a>
+      <a href="webp-to-png/">WebP → PNG</a>
+      <a href="avif-to-jpg/">AVIF → JPG</a>
+    </div>
+    LocalConvert · 常に端末内で処理します。 · <a href="#top">トップへ戻る</a>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "LocalConvert",
+  "description": "ファイルをアップロードしないブラウザベースの画像変換ツール。",
+  "url": "https://example.com/ja/",
+  "inLanguage": "ja",
+  "hasPart": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "HEIC → JPG",
+      "url": "https://example.com/ja/heic-to-jpg/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (browser-based)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "WebP → PNG",
+      "url": "https://example.com/ja/webp-to-png/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (browser-based)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "AVIF → JPG",
+      "url": "https://example.com/ja/avif-to-jpg/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (browser-based)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>

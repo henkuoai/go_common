@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HEIC 转 JPG —— 免费、不上传、保护隐私</title>
+<meta name="description" content="在浏览器里即刻把 iPhone 的 HEIC/HEIF 照片转成 JPG。100% 私密 —— 文件永远不会离开你的设备。支持批量转换、调整画质、打包 ZIP 下载。免费、不用注册、不加水印。">
+<link rel="canonical" href="https://example.com/zh/heic-to-jpg/">
+  <link rel="alternate" hreflang="en" href="https://example.com/heic-to-jpg/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://example.com/zh/heic-to-jpg/">
+  <link rel="alternate" hreflang="ja" href="https://example.com/ja/heic-to-jpg/">
+  <link rel="alternate" hreflang="ko" href="https://example.com/ko/heic-to-jpg/">
+  <link rel="alternate" hreflang="x-default" href="https://example.com/heic-to-jpg/">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232563eb'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='17' font-weight='700' fill='white' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="HEIC 转 JPG —— 免费、不上传、保护隐私">
+<meta property="og:description" content="在浏览器里把 iPhone 的 HEIC 照片转成 JPG。文件永远不会离开你的设备。">
+<meta property="og:url" content="https://example.com/zh/heic-to-jpg/">
+
+<link rel="stylesheet" href="../../assets/tool.css">
+</head>
+<body id="top">
+
+<nav class="sitenav">
+  <div class="wrap">
+    <a class="brand" href="../"><span class="mark">/</span>LocalConvert</a>
+    <ul>
+      <li><a href="../heic-to-jpg/" aria-current="page">HEIC → JPG</a></li>
+      <li><a href="../webp-to-png/">WebP → PNG</a></li>
+      <li><a href="../avif-to-jpg/">AVIF → JPG</a></li>
+    </ul>
+    <div class="langsw" aria-label="语言" role="group">
+      <a href="../../heic-to-jpg/" hreflang="en" lang="en" title="English">EN</a>
+      <a href="../../zh/heic-to-jpg/" hreflang="zh-Hans" lang="zh-Hans" aria-current="page" title="简体中文">中文</a>
+      <a href="../../ja/heic-to-jpg/" hreflang="ja" lang="ja" title="日本語">日本語</a>
+      <a href="../../ko/heic-to-jpg/" hreflang="ko" lang="ko" title="한국어">한국어</a>
+    </div>
+  </div>
+</nav>
+
+<div class="trustbar" id="trustbar"></div>
+
+<div class="wrap">
+  <header>
+    <h1>HEIC 转 <span class="accent">JPG</span></h1>
+    <p class="lede">就在这里把 iPhone 照片转成 JPG。文件由你自己的 CPU 在本地解码 —— 永远不会上传到任何服务器。</p>
+    <div class="badges">
+      <span class="badge g">✓ 从不上传</span>
+      <span class="badge">批量转换</span>
+      <span class="badge">打包 ZIP 下载</span>
+      <span class="badge">画质可调</span>
+      <span class="badge">免费不限量</span>
+    </div>
+  </header>
+
+  <main>
+    <div id="tool"></div>
+
+    <section class="content">
+      <h2>为什么要把 HEIC 转成 JPG？</h2>
+      <p>HEIC 是 iPhone 默认的拍摄格式 —— 同样的照片它只占大约一半空间。问题出在下一步。Windows 不买付费解码器就打不开它，大多数浏览器至今显示不了它，而大量上传表单、政务网站和打印店干脆直接拒收。HEIC 不是你选的，是你的手机替你选的。转成 JPG，就是让这个文件在任何地方都能用。</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 10l7-7 7 7"/></svg></div>
+          <h4>到处都能打开</h4>
+          <p>JPG 在任何设备、浏览器、打印机和上传表单上都能打开。不用装解码器包，也不会遇到"不支持的文件格式"。</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+          <h4>文件不离开你的设备</h4>
+          <p>大多数转换器会把你的照片传到一台你完全不了解的服务器上。在这里，解码发生在你的浏览器标签页里，没有任何数据被发往任何地方。</p>
+        </div>
+        <div class="card">
+          <div class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg></div>
+          <h4>又快又不限量</h4>
+          <p>不排队、不限文件大小、没有每小时 3 次的限制。现代浏览器原生就能解码 HEIC，其他的走 WebAssembly 解码器。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>怎么把 HEIC 转成 JPG</h2>
+      <ul>
+        <li><b>添加文件</b> —— 拖进来、点<i>选择文件</i>，或者用 Ctrl&nbsp;+&nbsp;V 直接粘贴。一次多个文件也没问题。</li>
+        <li><b>需要的话调整一下</b> —— 拖动质量滑块在体积和细节之间取舍，或者限制分辨率，方便发邮件和放上网页。</li>
+        <li><b>下载</b> —— 单张保存，或者一次性打包成 ZIP 全部拿走。</li>
+      </ul>
+      <h3>输出体积大概会是多少？</h3>
+      <p>这件事最好在动手前就知道，因为 HEIC 和 JPG 的效率并不对等。下面是拿一张 286.7&nbsp;KB 的 1440×960 iPhone 照片实测的结果：</p>
+      <div class="tablewrap">
+        <table class="data">
+          <thead><tr><th>输出设置</th><th>文件大小</th><th>相比原文件</th></tr></thead>
+          <tbody>
+            <tr><td class="h">JPG 质量 95</td><td>771 KB</td><td class="up">+169%</td></tr>
+            <tr><td class="h">JPG 质量 85</td><td>482 KB</td><td class="up">+68%</td></tr>
+            <tr><td class="h">JPG 质量 75</td><td>366 KB</td><td class="up">+28%</td></tr>
+            <tr><td class="h">JPG 质量 65</td><td>302 KB</td><td class="up">+5%</td></tr>
+            <tr><td class="h">JPG 质量 55</td><td>260 KB</td><td class="down">−9%</td></tr>
+            <tr><td class="h">匹配原始大小（自动）</td><td>283 KB</td><td class="down">−1%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>HEIC 里的 HEVC 编码就是比 JPEG 更高效 —— 这正是苹果用它的全部理由。所以忠实还原的 JPG 通常<b>更大</b>，网上每一个转换器都是这个表现。你能调的是两根杠杆：质量滑块，和<b>匹配原始大小</b> —— 后者会针对每个文件分别找出最接近原始体积的设置。</p>
+    </section>
+
+    <section class="content">
+      <h2>常见问题</h2>
+      <details><summary>为什么我转出来的 JPG 比原来的 HEIC 还大？</summary><p>因为 HEIC 用的是更高效的编码。同样的观感下，HEIC 内部的 HEVC 压缩只需要 JPEG 大约一半的字节 —— 这正是苹果采用它的原因。所以同一张照片忠实转成 JPG 通常更大。不是这个工具在浪费空间，任何转换器都会给你同样的结果。如果体积比兼容性更重要，选 WebP（比 JPG 小约 25%），或者按<b>匹配原始大小</b>。</p></details>
+      <details><summary>"匹配原始大小"做了什么？</summary><p>它会搜索最接近你原始文件体积的 JPG 质量档位，而且是逐个文件分别搜索。结果通常落在 65–72% 之间 —— 在屏幕上依然看不出差别，但文件不会膨胀。</p></details>
+      <details><summary>真的免费吗？套路在哪？</summary><p>免费且不限量。整个页面都在你的浏览器里运行，所以每次转换对我们来说没有服务器成本需要转嫁。不用账号、不留邮箱、不加水印。</p></details>
+      <details><summary>我的照片会被上传到什么地方吗？</summary><p>不会。这就是整个设计。你的浏览器只下载一次解码器，之后全部在本地完成。转换时打开开发者工具的 Network 面板，你不会看到任何携带你图片的请求 —— 页面上的面板也会替你统计外发字节数。</p></details>
+      <details><summary>会丢掉 EXIF 之类的元数据吗？</summary><p>会，而且我们宁愿直说也不装作没有。转换经过 canvas，所以 EXIF —— 包括 GPS 坐标和原始拍摄时间 —— 会被丢弃。对大多数在网上分享照片的人来说这是隐私上的加分，但如果你需要在专业用途中保留 EXIF，请用桌面工具。</p></details>
+      <details><summary>支持哪些苹果和安卓文件？</summary><p>任何 HEIC 或 HEIF 容器：单张照片，以及某些安卓手机写出的 HEIF 文件。HEIC 图像序列（连拍）转换第一帧。Live Photo 会转成一张静态 JPG。</p></details>
+      <details><summary>为什么第一次转换比较慢？</summary><p>你的浏览器需要下载一次 WebAssembly 解码器（约 1.4&nbsp;MB，之后走缓存）。在 Safari 17.6+ 上我们完全跳过这一步，因为浏览器原生就能解 HEIC。</p></details>
+      <details><summary>有文件大小或数量限制吗？</summary><p>没有人为限制。一切都在你自己的机器上处理，所以唯一的天花板是你自己的内存。非常大的批次（40 张以上全分辨率照片）会吃掉大量内存。</p></details>
+    </section>
+
+    <section class="related">
+      <h2>这一组里的其他转换器</h2>
+      <p class="rsub">同一套引擎，同样的隐私模型 —— 它们都把文件留在你的设备上。</p>
+      <div class="cluster">
+        <a class="tool here" href="../heic-to-jpg/">
+          <div class="tt">HEIC → JPG</div>
+          <div class="td">把 iPhone 照片变成什么都能打开的格式。你正在这里。</div>
+          <div class="tm">libheif WASM · Safari 原生</div>
+        </a>
+        <a class="tool" href="../webp-to-png/">
+          <div class="tt">WebP → PNG</div>
+          <div class="td">拿到可以继续编辑的无损 PNG，或者把 WebP 压小用于印刷。</div>
+          <div class="tm">原生解码 · 不加载 WASM</div>
+        </a>
+        <a class="tool" href="../avif-to-jpg/">
+          <div class="tt">AVIF → JPG</div>
+          <div class="td">最新的图片格式，交给最老的格式打开。支持 10-bit 文件。</div>
+          <div class="tm">原生解码 · libavif WASM 降级</div>
+        </a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="../">全部转换器</a>
+      <a href="../heic-to-jpg/">HEIC → JPG</a>
+      <a href="../webp-to-png/">WebP → PNG</a>
+      <a href="../avif-to-jpg/">AVIF → JPG</a>
+    </div>
+    HEIC 转 JPG · 始终在本地处理。 · <a href="#top">回到顶部</a>
+  </div>
+</footer>
+
+<!-- =====================================================================
+     Page-specific decoder. Everything else comes from ../assets/tool-core.js.
+     Error strings arrive as self.__MSG, injected by the engine, so this
+     source is identical in every language.
+     ===================================================================== -->
+<script id="heic-worker" type="javascript/worker">
+const LIBHEIF_URL = 'https://cdn.jsdelivr.net/npm/libheif-js@1.23.2/libheif-wasm/libheif-bundle.mjs';
+
+let libheifPromise = null;
+
+function loadLibheif() {
+  if (libheifPromise) return libheifPromise;
+  libheifPromise = (async () => {
+    self.__trackNet(LIBHEIF_URL, 'worker import', 0);
+    const mod = await import(LIBHEIF_URL);
+    const factory = mod.default !== undefined ? mod.default : mod;
+    let inst = typeof factory === 'function' ? factory() : factory;
+    if (inst && typeof inst.then === 'function') inst = await inst;
+    if (!inst || typeof inst.HeifDecoder !== 'function') {
+      throw new Error(self.__MSG.libheifFail);
+    }
+    return inst;
+  })();
+  return libheifPromise;
+}
+
+async function decodeNative(blob) {
+  const bmp = await createImageBitmap(blob);
+  return { bitmap: bmp, width: bmp.width, height: bmp.height, mode: 'native' };
+}
+
+async function decodeWasm(buffer) {
+  const libheif = await loadLibheif();
+  const decoder = new libheif.HeifDecoder();
+  const images = decoder.decode(new Uint8Array(buffer));
+  if (!images || images.length === 0) throw new Error(self.__MSG.noImage);
+
+  const image = images[0];
+  const width = image.get_width();
+  const height = image.get_height();
+  const imageData = new ImageData(width, height);
+
+  const ok = await new Promise((resolve) => {
+    image.display(imageData, (result) => resolve(result || null));
+  });
+  if (!ok) throw new Error(self.__MSG.hevcFail);
+
+  const bitmap = await createImageBitmap(imageData);
+  return { bitmap, width, height, mode: 'wasm' };
+}
+
+self.onmessage = async (e) => {
+  const { id, buffer, mime, force } = e.data;
+  const t0 = performance.now();
+  try {
+    let out;
+    if (force === 'wasm') {
+      out = await decodeWasm(buffer);
+    } else {
+      // Prefer the browser's own decoder when it can actually handle HEIC.
+      try {
+        out = await decodeNative(new Blob([buffer], { type: mime || 'image/heic' }));
+      } catch (_) {
+        out = await decodeWasm(buffer);
+      }
+    }
+    const ms = Math.round(performance.now() - t0);
+    self.postMessage(
+      { id, ok: true, bitmap: out.bitmap, width: out.width, height: out.height, mode: out.mode, ms },
+      [out.bitmap]
+    );
+  } catch (err) {
+    self.postMessage({ id, ok: false, error: (err && err.message) || String(err) });
+  }
+};
+</script>
+
+<script type="module">
+import { mountTool } from '../../assets/tool-core.js';
+
+const HEIC_BRANDS = ['heic', 'heix', 'hevc', 'hevx', 'heim', 'heis', 'mif1', 'msf1'];
+
+// Extensions lie often enough that the container's magic bytes get the final word.
+async function looksLikeHeic(file) {
+  const byName = /\.(heic|heif|heics|heifs)$/i.test(file.name);
+  const head = new Uint8Array(await file.slice(0, 12).arrayBuffer());
+  const ftyp = String.fromCharCode(head[4], head[5], head[6], head[7]) === 'ftyp';
+  if (!ftyp) return byName;
+  const brand = String.fromCharCode(head[8], head[9], head[10], head[11]);
+  return HEIC_BRANDS.includes(brand) || byName;
+}
+
+mountTool({
+  mount: '#tool',
+  locale: "zh",
+  workerId: "heic-worker",
+  zipName: "heic-to-jpg.zip",
+  // Decoder error strings, in this page's language (see workerTag above).
+  workerMsgs: {
+    "libheifFail": "libheif 已加载，但 HeifDecoder 不可用",
+    "noImage": "在这个文件里没有找到图像",
+    "hevcFail": "HEVC 帧解码失败"
+  },
+
+  input: {
+    name: "HEIC / HEIF",
+    dropTitle: "HEIC / HEIF",
+    accept: ".heic,.heif,.heics,image/heic,image/heif",
+    ext: /\.(heic|heif|heics|heifs)$/i,
+    mime: "image/heic",
+    sniff: looksLikeHeic,
+    reject: "这些文件不是 HEIC/HEIF。请把 iPhone 的 .heic 或 .heif 文件拖到这里。",
+  },
+
+  formats: [
+    { mime: "image/jpeg", ext: "jpg", label: "JPG", lossy: true,
+      hint: "JPG 是分享和打印最稳妥的选择。" },
+    { mime: "image/png", ext: "png", label: "PNG", lossy: false,
+      hint: "PNG 是无损格式 —— 体积会大 10 倍左右。只有需要透明通道时才用它。" },
+    { mime: "image/webp", ext: "webp", label: "WebP", lossy: true,
+      hint: "同画质下 WebP 比 JPG 小约 25%，而且所有现代浏览器都支持。" },
+  ],
+  format: "image/jpeg",
+
+  quality: 70,
+  qualityHint: "HEIC 用大约一半的空间存下同一张照片，所以输出通常更大。70% 能让体积贴近原文件。",
+  qualityHintByFormat: {
+    "image/png": "PNG 是无损的，质量滑块对它无效 —— 而且体积会比 HEIC 大得多。",
+    "image/webp": "WebP 的压缩效率比 JPG 好，所以 70% 在这里更耐用。"
+  },
+
+  banner: {
+    grew: "这是预期内的，不是 bug：HEIC 把同一张照片塞进 JPG 大约一半的字节里。调低质量、换成 WebP，或者让这个页面自动找出匹配你原始大小的设置。",
+    grewByFormat: {
+      "image/png": "PNG 是无损的，它会把解码后的每个像素都存下来，体积会膨胀到原文件的很多倍。这是格式决定的，不是转换器的问题。除非有明确要求，否则用 JPG 或 WebP —— 如果确实需要 PNG，那就限制分辨率，这是 PNG 唯一有效的减体积杠杆。"
+    },
+    grewActions: [
+      { label: "⭐ 匹配原始大小", act: "fit" },
+      { label: "试试 WebP（比 JPG 小 30%）", act: "format:image/webp" },
+    ],
+  },
+
+  verify: {
+    steps: [
+      "打开开发者工具（<code>F12</code>）→ <b>Network</b> 面板，清空。",
+      "把你自己的 HEIC 文件拖进来，然后转换。",
+      "你会看到的唯一一条记录是来自 CDN 的解码器库 —— 而且第二次访问之后连它都没有。<b>没有任何请求会携带你的照片。</b>",
+    ],
+  },
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "HEIC 转 JPG 转换器",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (browser-based)",
+      "description": "直接在浏览器里把 HEIC/HEIF 照片转成 JPG，文件永不上传到服务器。",
+      "url": "https://example.com/zh/heic-to-jpg/",
+      "inLanguage": "zh-Hans",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "我的照片会被上传到什么地方吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不会。解码完全在浏览器内完成，用的是 libheif 的 WebAssembly 版本，没有任何图像数据被传输。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "这个转换器免费吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "免费且不限量，不需要注册、不留邮箱、不加水印。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "会保留 EXIF 元数据吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不会。转换经过 canvas，所以 EXIF（包括 GPS 坐标和拍摄时间）会被丢弃。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "为什么转出来的 JPG 比 HEIC 还大？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HEIC 使用 HEVC，同观感下的压缩效率约为 JPEG 的两倍。因此忠实还原的 JPG 通常比源 HEIC 更大。调低质量档位，或者用\"匹配原始大小\"贴近输入体积。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

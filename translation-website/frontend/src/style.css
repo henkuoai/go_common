@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+
+html, body, #app { height: 100%; }
+body {
+  font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  color: #1F2937;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-deepl-blue px-5 py-2 text-sm font-medium text-white transition hover:bg-deepl-accent disabled:opacity-50;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-deepl-border bg-white px-4 py-2 text-sm text-deepl-text transition hover:border-gray-400;
+  }
+  .pro-pill {
+    @apply rounded-full bg-deepl-pro px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white;
+  }
+  .panel {
+    @apply rounded-xl border border-deepl-border bg-white;
+  }
+  .input-base {
+    @apply w-full bg-transparent outline-none placeholder:text-gray-400;
+  }
+  .nav-link {
+    @apply inline-flex items-center gap-1 text-sm text-deepl-text/90 hover:text-deepl-blue transition;
+  }
+  .dropdown-item {
+    @apply flex cursor-pointer items-center justify-between px-3 py-2 text-sm hover:bg-deepl-panel;
+  }
+}
+
+/* 文本区去除默认外观 */
+textarea { resize: none; }
+
+/* 隐藏 scrollbar 但保留滚动 */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+/* Pro 标识颜色变量 */
+:root { --pro: #0E9967; }
